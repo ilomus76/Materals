@@ -1,0 +1,12 @@
+/* 요소 명으로 스타일 적용대상을 선택 */
+h1{color: blue;}
+p{color: red;}
+
+/* 아이디 명으로 스타일 적용대상을 선택 */
+#p1{background-color: yellow;}
+
+/* 클래스 명으로 스타일 적용대상을 선택 */
+.mbca{font-style: italic;}
+
+/* 이미지 크기 지정 (단위:px)  */
+img{width: 150px;} 
