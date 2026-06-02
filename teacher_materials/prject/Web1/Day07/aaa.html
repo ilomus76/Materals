@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>환급 선택</title>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+      "Pretendard", sans-serif;
+    background: #ffffff;
+    color: #111;
+  }
+
+  .container {
+    max-width: 430px;
+    margin: 0 auto;
+    min-height: 100vh;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 뒤로가기 */
+  .back-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 28px;
+    color: #222;
+    margin-bottom: 40px;
+  }
+
+  /* 타이틀 */
+  .title {
+    font-size: 48px;
+    line-height: 1.3;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 40px;
+  }
+
+  /* 카드 */
+  .refund-card {
+    position: relative;
+    border-radius: 28px;
+    padding: 28px;
+    margin-bottom: 20px;
+    background: #fff;
+  }
+
+  .refund-card.selected {
+    border: 2px solid #2f80ed;
+  }
+
+  .refund-card.disabled {
+    border: 1px solid #efefef;
+  }
+
+  /* 체크 아이콘 */
+  .check-circle {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  .selected .check-circle {
+    background: #2f80ed;
+    color: white;
+  }
+
+  .disabled .check-circle {
+    background: #e5e5e5;
+    color: white;
+  }
+
+  .category {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .category-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .basic-icon {
+    background: #2f80ed;
+  }
+
+  .extra-icon {
+    background: #f4b400;
+  }
+
+  .category-title {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .basic-color {
+    color: #2f80ed;
+  }
+
+  .extra-color {
+    color: #f4b400;
+  }
+
+  .price-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 26px;
+  }
+
+  .price {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -1px;
+  }
+
+  .badge {
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .badge-blue {
+    background: #eef5ff;
+    color: #2f80ed;
+  }
+
+  .badge-yellow {
+    background: #fff5d9;
+    color: #d79b00;
+  }
+
+  .feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+  }
+
+  .feature-icon {
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  .feature.blue {
+    color: #2f80ed;
+  }
+
+  .feature.yellow {
+    color: #f4b400;
+  }
+
+  .divider {
+    margin-top: 18px;
+    border-top: 1px solid #ececec;
+    padding-top: 20px;
+  }
+
+  .faq {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #a0a0a0;
+    font-size: 16px;
+  }
+
+  /* 하단 버튼 */
+  .bottom-area {
+    margin-top: auto;
+    padding-top: 32px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    height: 72px;
+    border: none;
+    border-radius: 22px;
+    background: #2f80ed;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <button class="back-btn">←</button>
+
+  <h1 class="title">
+    원하는 환급액을<br>
+    선택해 주세요
+  </h1>
+
+  <!-- 기본환급 -->
+  <div class="refund-card selected">
+    <div class="check-circle">✓</div>
+
+    <div class="category">
+      <div class="category-icon basic-icon">₩</div>
+      <div class="category-title basic-color">기본환급</div>
+    </div>
+
+    <div class="price-row">
+      <div class="price">56,045원</div>
+      <div class="badge badge-blue">환급</div>
+    </div>
+
+    <div class="feature blue">
+      <span class="feature-icon">✓</span>
+      <span>기본 환급액만 받아요</span>
+    </div>
+  </div>
+
+  <!-- 추가환급 -->
+  <div class="refund-card disabled">
+
+    <div class="check-circle">✓</div>
+
+    <div class="category">
+      <div class="category-icon extra-icon">↑</div>
+      <div class="category-title extra-color">추가환급</div>
+    </div>
+
+    <div class="price-row">
+      <div class="price">최대 84,067원</div>
+      <div class="badge badge-yellow">환급</div>
+    </div>
+
+    <div class="feature yellow">
+      <span class="feature-icon">✓</span>
+      <span>기본 환급액을 받아요</span>
+    </div>
+
+    <div class="feature yellow">
+      <span class="feature-icon">✓</span>
+      <span>서류를 제출하면 추가 환급액을 받아요</span>
+    </div>
+
+    <div class="feature yellow">
+      <span class="feature-icon">✓</span>
+      <span>중간에 기본환급으로 변경할 수 있어요</span>
+    </div>
+
+    <div class="divider">
+      <div class="faq">
+        <span>추가환급은 어떻게 진행되나요?</span>
+        <span>›</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-area">
+    <button class="submit-btn">
+      선택 완료
+    </button>
+  </div>
+
+</div>
+</body>
+</html>
