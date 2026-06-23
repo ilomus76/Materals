@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화리뷰사이트 - 영화소개</title>
+
+    <link rel="stylesheet" href="../../css/IntroPage/movie_intro.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="../../html/HomePage/home_list.html">
+                    <img src="../../image/top_logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="client_menu" id="client_menu">
+                <a href="../../html/LogInPage/login.html">로그인</a>
+                <a href="../../html/JoinPage/join.html">회원가입</a>
+            </div>
+        </header>
+        <div class="second_header">
+            <div id="contents_menu">
+                <a href="./movie_intro.html">영화소개</a>
+                <a href="../../html/ReviewPage/review_board.html">영화리뷰</a>
+                <a href="../MapPage/map.html">영화관 찾기</a> 
+            </div>
+            <div class="movie_search">
+                <input
+                    id="movie_keyword"
+                    class="searchbox"
+                    type="text"
+                    placeholder="영화제목 입력">
+                <button class="search_btn" onclick="searchMovie()">검색</button>
+            </div> 
+        </div>
+        <div class="title">
+            <h2>영화 소개</h2>
+            <p>원하는 영화를 선택해보세요</p>
+        </div>
+        <div class="movie_genre">
+            <div class="action_movie">
+                <div class="genre">
+                    <span>액션/어드벤쳐</span>
+                </div>
+                <div class = "movie_lists">
+                    <div class="movie_name">
+                        <a href="./colony_intro.html">
+                            <img src="../image/colony_poster.jpg" alt="군체">
+                            <span>군체</span>
+                        </a>
+                    </div>
+                    <div class="movie_name">
+                        <a href="./colony_intro.html">
+                            <img src="../image/colony_poster.jpg" alt="군체">
+                            <span>군체</span>
+                        </a>
+                    </div>
+                    <div class="movie_name">
+                        <a href="./colony_intro.html">
+                            <img src="../image/colony_poster.jpg" alt="군체">
+                            <span>군체</span>
+                        </a>
+                    </div>
+                    <div class="movie_name">
+                        <a href="./colony_intro.html">
+                            <img src="../image/colony_poster.jpg" alt="군체">
+                            <span>군체</span>
+                        </a>
+                    </div>
+                </div>    
+            </div>
+            <div class="comedy_movie">
+                <div class="genre">
+                    <span>코미디</span>
+                </div>
+                <div class = "movie_lists">
+                    <div class="movie_name">
+                        <a href="./colony_intro.html">
+                            <img src="../image/colony_poster.jpg" alt="군체">
+                            <span>군체</span>
+                        </a>
+                    </div>
+                    <div class="movie_name">
+                        <a href="./colony_intro.html">
+                            <img src="../image/colony_poster.jpg" alt="군체">
+                            <span>군체</span>
+                        </a>
+                    </div>
+                    <div class="movie_name">
+                        <a href="./colony_intro.html">
+                            <img src="../image/colony_poster.jpg" alt="군체">
+                            <span>군체</span>
+                        </a>
+                    </div>
+                    <div class="movie_name">
+                        <a href="./colony_intro.html">
+                            <img src="../image/colony_poster.jpg" alt="군체">
+                            <span>군체</span>
+                        </a>
+                    </div>
+                </div>    
+            </div>
+            <div class="romance_movie">
+                <div class="genre">
+                    <span>로맨스</span>
+                </div>
+                <div class = "movie_lists">
+                    <div class="movie_name">
+                        <a href="./colony_intro.html">
+                            <img src="../image/colony_poster.jpg" alt="군체">
+                            <span>군체</span>
+                        </a>
+                    </div>
+                    <div class="movie_name">
+                        <a href="./colony_intro.html">
+                            <img src="../image/colony_poster.jpg" alt="군체">
+                            <span>군체</span>
+                        </a>
+                    </div>
+                    <div class="movie_name">
+                        <a href="./colony_intro.html">
+                            <img src="../image/colony_poster.jpg" alt="군체">
+                            <span>군체</span>
+                        </a>
+                    </div>
+                    <div class="movie_name">
+                        <a href="./colony_intro.html">
+                            <img src="../image/colony_poster.jpg" alt="군체">
+                            <span>군체</span>
+                        </a>
+                    </div>
+                </div>    
+            </div>
+            <div class="horor_movie">
+                <div class="genre">
+                    <span>공포/스릴러</span>
+                </div>
+                <div class = "movie_lists">
+                    <div class="movie_name">
+                        <a href="./colony_intro.html">
+                            <img src="../image/colony_poster.jpg" alt="군체">
+                            <span>군체</span>
+                        </a>
+                    </div>
+                    <div class="movie_name">
+                        <a href="./colony_intro.html">
+                            <img src="../image/colony_poster.jpg" alt="군체">
+                            <span>군체</span>
+                        </a>
+                    </div>
+                    <div class="movie_name">
+                        <a href="./colony_intro.html">
+                            <img src="../image/colony_poster.jpg" alt="군체">
+                            <span>군체</span>
+                        </a>
+                    </div>
+                    <div class="movie_name">
+                        <a href="./colony_intro.html">
+                            <img src="../image/colony_poster.jpg" alt="군체">
+                            <span>군체</span>
+                        </a>
+                    </div>
+                </div>    
+            </div>
+            <div class="animation_movie">
+                <div class="genre">
+                    <span>애니메이션</span>
+                </div>
+                <div class = "movie_lists">
+                    <div class="movie_name">
+                        <a href="./colony_intro.html">
+                            <img src="../image/colony_poster.jpg" alt="군체">
+                            <span>군체</span>
+                        </a>
+                    </div>
+                    <div class="movie_name">
+                        <a href="./colony_intro.html">
+                            <img src="../image/colony_poster.jpg" alt="군체">
+                            <span>군체</span>
+                        </a>
+                    </div>
+                    <div class="movie_name">
+                        <a href="./colony_intro.html">
+                            <img src="../image/colony_poster.jpg" alt="군체">
+                            <span>군체</span>
+                        </a>
+                    </div>
+                    <div class="movie_name">
+                        <a href="./colony_intro.html">
+                            <img src="../image/colony_poster.jpg" alt="군체">
+                            <span>군체</span>
+                        </a>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/common.js"></script>
+</body>
+</html>

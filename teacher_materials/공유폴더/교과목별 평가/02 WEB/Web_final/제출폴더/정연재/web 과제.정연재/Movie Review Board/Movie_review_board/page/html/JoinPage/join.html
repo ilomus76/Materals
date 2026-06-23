@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화리뷰사이트 - 회원가입</title>
+
+    <link rel="stylesheet" href="../../css/JoinPage/join.css">
+</head>
+<body>
+    <div class="container">
+        <div class="join_btn_wrap">
+            <div class="join_logo">
+                <a href="../../html/HomePage/home_list.html">
+                    <img src="../../image/top_logo.png" alt="logo">
+                </a>
+            </div>
+            <!-- 아이디 칸 -->
+            <div class="user_id_wrap">
+                <input type="text" placeholder="아이디" id="user_id">
+                <div id="id_check_msg"><button type="button" onclick="checkID()">중복확인</button></div>
+            </div>
+            <div id="id_msg" class="error_msg"></div>
+
+            <!-- 비밀번호 칸 -->
+            <div class="user_pw_wrap">
+                <input type="password" placeholder="비밀번호" id="user_pw">
+            </div>
+            <div id="pw_msg" class="error_msg"></div>
+
+            <!-- 비밀번호 확인 칸 -->
+            <div class="user_pw_check_wrap">
+                <input type="password" placeholder="비밀번호 확인" id="user_pw_check">
+            </div>
+            <div id="pw_check_msg" class="error_msg"></div>
+
+            <!-- 이메일 칸 -->
+            <div class="user_email_wrap">
+                <input type="text" placeholder="이메일" id="user_email">
+            </div>
+            <div id="email_msg" class="error_msg"></div>
+
+            <!-- 생년월일 칸 -->
+            <div class="user_birth_wrap">
+                <div class="birth"><p>생년월일</p></div>
+                <div class="user_birth"><input type="date" id="birth"></div>
+            </div>
+            <div id="birth_msg" class="error_msg"></div>
+
+            <!-- 성별 칸 -->
+            <div class="user_gender_wrap">
+                <div class="male_box">
+                    <input type="radio" name="user_gender" id="male" value="남자">
+                    <label for="male">남자</label>
+                </div>
+                <div class="female_box">
+                    <input type="radio" name="user_gender" id="female" value="여자">
+                    <label for="female">여자</label>
+                </div>
+            </div>
+            <div id="gender_msg" class="error_msg"></div>
+
+            <!-- 닉네임 칸 -->
+            <div class="nickname_wrap">
+                <input type="text" placeholder="닉네임" id="user_nickname">
+            </div>
+            <div id="nickname_msg" class="error_msg"></div>
+
+            <!-- 버튼 칸 -->
+            <div class="final_check_wrap">
+                <button type="button" onclick="join()">회원가입</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/join.js"></script>
+    <script src="../../js/common.js"></script>
+</body>
+</html>

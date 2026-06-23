@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맛식당!2_3</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/2_3_edit.css">
+    <script
+    src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=8ca0785f755a41e7a594e16fbc7654f9&libraries=services">
+    </script>
+    <script src="../js/2_2_upload.js" defer></script>
+
+</head>
+<body>
+    <div id="wrap">
+
+        <header>
+            <button id="back_btn" onclick="history.back()"> ❮ </button>
+
+            <img id="logo" src="../source/img/logo_b.png" alt="logo">
+
+            <button id="profile_btn" onclick="location.href='./4_personal_info.html'" ><img src="../source/img/profile_default.png" alt="profile"></button>
+        </header>
+
+        <main>
+            <div id="upload_img">
+                <img id="profile_select" src="../source/img/profile_choose.png" alt="profile_choose">
+                <input id= in1 type="file" accept="image/*">
+                <!-- 이미 입력된 사진값을 그대로 유지하며 작성 -->
+
+            </div>
+
+            <div id="upload_text">
+                <p>음식명</p>
+                <input type="text" placeholder="음식명을 입력하세요." value="제육볶음 정식">
+                <p>식당명</p>
+            </div>
+
+                <div id="restaurant_search">
+                    <input type="text" id="restaurant_name" placeholder="식당명을 검색하세요" value="서울밥집 신림점">
+
+                    <button id="search_btn">
+                        검색
+                    </button>
+                </div>
+
+                <div id="map"></div>
+                <div id="upload_comment">
+                    <p>한줄평</p>
+                    <textarea name="comment" id="comment" maxlength="100" 
+                    placeholder="한줄평을 입력하세요(최대 100자)">밥이 무한리필이라니!</textarea>
+                </div>
+                <!-- 이미 입력된 값을 그대로 유지하며 작성 / 어떻게 구현할지는..? -->
+
+            <button id="upload_btn">수정하기</button>
+
+        </main>
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
+</body>
+</html>

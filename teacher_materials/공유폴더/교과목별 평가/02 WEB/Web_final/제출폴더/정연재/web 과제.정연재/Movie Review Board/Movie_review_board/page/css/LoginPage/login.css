@@ -1,0 +1,76 @@
+@import url(../common.css);
+
+.login_wrap{
+    margin: 10% auto ;
+    width: 40%;
+    border: 2px solid #222222;
+    padding: 10px;
+}
+
+.login_wrap .login_logo img{
+    width: 200px;
+    height: 80px;
+    margin-bottom: 30px;
+}
+
+/* 아이디 */
+.login_wrap .write_id_wrap{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 30px auto;
+}
+
+.login_wrap .write_id_wrap input{
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 1.2rem;
+    color: white;
+    padding: 5px;
+    background-color: black;
+    border: 2px solid #222222;
+}
+
+/* 비밀번호 */
+
+.login_wrap .write_pw_wrap{
+    width: 90%;
+    margin: 30px auto;
+}
+
+.login_wrap .write_pw_wrap input{
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 1.2rem;
+    color: white;
+    padding: 5px;
+    background-color: black;
+    border: 2px solid #222222;
+}
+
+/* 로그인 버튼 */
+.login_wrap .login_btn_wrap{
+    width: 90%;
+    margin: auto;
+}
+
+.login_wrap .login_btn_wrap button{
+    box-sizing: border-box;
+    width: 100%;
+    background-color: red;
+    border: 2px solid #222222;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+/* 회원가입 버튼 */
+
+.login_wrap .join_link a{
+    color: #757373;
+    font-size: .8rem;
+    
+}

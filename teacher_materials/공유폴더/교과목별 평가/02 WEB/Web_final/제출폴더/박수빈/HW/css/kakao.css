@@ -1,0 +1,162 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body {
+
+    font-family:sans-serif;
+
+    background:#fafafa;
+
+    color:#222;
+
+}
+
+.top-bar {
+
+    height:80px;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 70px;
+
+    box-shadow:0 3px 15px rgba(0,0,0,0.08);
+
+}
+
+
+
+.logo {
+
+    text-decoration:none;
+
+    color:black;
+
+    font-size:32px;
+
+    font-weight:bold;
+
+}
+
+
+.home-btn {
+
+    text-decoration:none;
+
+    color:white;
+
+    background:black;
+
+    padding:12px 25px;
+
+    border-radius:8px;
+
+    font-size:14px;
+
+}
+
+
+.home-btn:hover {
+
+    opacity:.8;
+
+}
+
+.container {
+
+    width:90%;
+
+    max-width:1100px;
+
+    margin:50px auto;
+
+}
+
+.container h1 {
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+}
+
+.search-box {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin-bottom:30px;
+
+}
+
+#keyword {
+
+    width:320px;
+
+    padding:14px 18px;
+
+    border:1px solid #ddd;
+
+    border-radius:8px;
+
+    outline:none;
+
+    background:white;
+
+}
+
+#keyword:focus {
+
+    border-color:black;
+
+}
+
+button {
+
+    padding:14px 30px;
+
+    background:black;
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+button:hover {
+
+    opacity:.8;
+
+}
+
+#map {
+
+    width:100%;
+
+    height:600px;
+
+    border-radius:15px;
+
+    background:white;
+
+    box-shadow:
+
+    0 5px 20px rgba(0,0,0,0.1);
+
+}

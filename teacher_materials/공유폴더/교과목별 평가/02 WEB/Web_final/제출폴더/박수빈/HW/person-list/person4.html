@@ -1,0 +1,293 @@
+<div class="profile-page">
+
+
+<div class="profile-header">
+
+
+<img src="./img/김지원.jpeg"
+class="profile-img">
+
+
+<div class="profile-info">
+
+
+<h2>김지원</h2>
+
+
+<h3>🌟 인기 독서 크리에이터</h3>
+
+
+<p>
+다양한 책을 읽고 자신만의 시선으로
+감상을 공유하는 YArrBook 인기 기록가입니다.
+</p>
+
+
+<p>
+📚 좋아하는 분야 : 소설, 철학, 자기계발
+</p>
+
+
+<p>
+책 속 질문을 통해 새로운 생각을 발견하고
+독자들과 함께 성장하는 독서 기록가입니다.
+</p>
+
+
+
+<div class="stats">
+
+
+<div>
+<strong>172</strong>
+<span>독서 기록</span>
+</div>
+
+
+<div>
+<strong>21k</strong>
+<span>좋아요</span>
+</div>
+
+
+<div>
+<strong>64</strong>
+<span>읽은 책</span>
+</div>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="record-section">
+
+
+<h2>📖 인기 독서 기록</h2>
+
+
+
+<div class="record-card">
+
+
+<h3>모순</h3>
+
+
+<p>
+인생의 여러 선택과 감정 속에서
+사람이 가진 복잡한 마음을 생각하게 만든 책입니다.
+</p>
+
+
+<button onclick="like(this)">
+❤️ 7,820
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="record-card">
+
+
+<h3>미움받을 용기</h3>
+
+
+<p>
+타인의 시선에서 벗어나 나 자신답게 살아가는
+방법에 대해 생각하게 된 책입니다.
+</p>
+
+
+<button onclick="like(this)">
+❤️ 6,340
+</button>
+
+
+</div>
+
+
+
+
+<div class="record-card">
+
+
+<h3>불편한 편의점</h3>
+
+
+<p>
+작은 관심과 따뜻한 말 한마디가
+사람을 변화시킬 수 있다는 점이 인상 깊었습니다.
+</p>
+
+
+<button onclick="like(this)">
+❤️ 5,910
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+<style>
+
+.profile-page{
+width:90%;
+max-width:1000px;
+margin:50px auto;
+}
+
+
+.profile-header{
+
+display:flex;
+align-items:center;
+gap:50px;
+
+background:white;
+padding:40px;
+
+border-radius:20px;
+
+box-shadow:0 5px 20px #ddd;
+
+}
+
+
+
+.profile-img{
+
+width:200px;
+height:200px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+}
+
+
+.profile-info{
+
+flex:1;
+
+}
+
+
+.profile-info h2{
+
+font-size:38px;
+
+}
+
+
+
+.profile-info h3{
+
+color:#b8860b;
+
+}
+
+
+
+.profile-info p{
+
+color:#555;
+
+line-height:1.8;
+
+}
+
+
+
+.stats{
+
+display:flex;
+
+gap:40px;
+
+margin-top:25px;
+
+}
+
+
+
+.stats div{
+
+text-align:center;
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+
+
+.stats strong{
+
+font-size:24px;
+
+}
+
+
+
+.record-section{
+
+margin-top:50px;
+
+}
+
+
+
+.record-card{
+
+position:relative;
+
+background:#fafafa;
+
+padding:25px;
+
+margin:20px 0;
+
+border-radius:15px;
+
+}
+
+
+
+.record-card button{
+
+position:absolute;
+
+right:20px;
+
+top:20px;
+
+border:none;
+
+background:white;
+
+padding:10px;
+
+border-radius:20px;
+
+}
+
+
+</style>

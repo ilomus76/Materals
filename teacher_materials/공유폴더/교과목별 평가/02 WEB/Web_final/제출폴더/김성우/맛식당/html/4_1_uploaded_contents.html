@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맛식당!4_1</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/4_1_uploaded_contents.css">
+    <script src="../js/2_contents_list.js"></script>
+
+</head>
+<body>
+    
+<div id="wrap">
+
+    <header>
+        <button id="back_btn" onclick="history.back()"> ❮ </button>
+
+        <img id="logo" src="../source/img/logo_b.png" alt="logo">
+
+         <button id="profile_btn" onclick="location.href='./4_personal_info.html'" ><img src="../source/img/profile_default.png" alt="profile"></button>
+
+    </header>
+
+    <main>
+
+
+        <div class="search_bar">
+
+            <h1>내가 등록한 맛식당</h1>
+            <input type="text" placeholder="맛식당 이름을 검색해 보세요">
+
+        </div>
+
+        <div id="contents">
+                <div id="contents_menu">
+                    <div class="content">
+                        <img class="food" src="../source/food/food1.jpg" alt="food1">
+                        <p>제육볶음</p>
+                        <div class="heart">
+                            <img src="../source/img/heart.png" alt="heart">
+                            <p>36</p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <img class="food" src="../source/food/food2.jpg" alt="food2">
+                        <p>산더미불고기</p>
+                        <div class="heart">
+                            <img src="../source/img/heart.png" alt="heart">
+                            <p>25</p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <img class="food" src="../source/food/food3.jpg" alt="food3">
+                        <p>즉석떡볶이</p>
+                        <div class="heart">
+                            <img src="../source/img/heart.png" alt="heart">
+                            <p>21</p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <img class="food" src="../source/food/food4.jpg" alt="food4">
+                        <p>연어초밥</p>
+                        <div class="heart">
+                            <img src="../source/img/heart.png" alt="heart">
+                            <p>6</p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <img class="food" src="../source/food/food1.jpg" alt="food1">
+                        <p>제육볶음</p>
+                        <div class="heart">
+                            <img src="../source/img/heart.png" alt="heart">
+                            <p>36</p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <img class="food" src="../source/food/food2.jpg" alt="food2">
+                        <p>산더미불고기</p>
+                        <div class="heart">
+                            <img src="../source/img/heart.png" alt="heart">
+                            <p>25</p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <img class="food" src="../source/food/food3.jpg" alt="food3">
+                        <p>즉석떡볶이</p>
+                        <div class="heart">
+                            <img src="../source/img/heart.png" alt="heart">
+                            <p>21</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 여기 있는 거 전체 이제 데이터 별로 바뀔 수 있도록.. 무한생성 필요 -->
+                <!-- 클릭하면 2-1로 넘어가야.. 아이고 -->
+
+    </main>
+
+    <div id="for_upload_btn">
+        <button id="upload" onclick="location.href='./2_2_upload.html'"> 
+                <span class="plus">+</span>
+                <span class="upload-text">맛식당 등록</span> 
+        </button>
+    </div>
+    
+
+</div>
+    
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화리뷰사이트 - 영화관 찾기</title>
+
+    <link rel="stylesheet" href="../../css/MapPage/map.css">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="../../html/HomePage/home_list.html">
+                    <img src="../../image/top_logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="client_menu" id="client_menu">
+                <a href="../../html/LogInPage/login.html">로그인</a>
+                <a href="../../html/JoinPage/join.html">회원가입</a>
+            </div>
+        </header>
+        <div class="second_header">
+            <div id="contents_menu">
+                <a href="../../html/IntroPage/movie_intro.html">영화소개</a>
+                <a href="../ReviewPage/review_board.html">영화리뷰</a> 
+                <a href="../MapPage/map.html">영화관 찾기</a> 
+            </div>
+            <div class="movie_search">
+                <input
+                    id="movie_keyword"
+                    class="searchbox"
+                    type="text"
+                    placeholder="영화제목 입력">
+                <button class="search_btn" onclick="searchMovie()">검색</button>
+            </div> 
+        </div>
+
+        <div class="title">
+            <h2>영화관 찾기</h2>
+            <p>내 주변 영화관을 찾아보세요.</p>
+        </div>
+
+        <div id="map"></div>
+
+        <div class="theater_search_wrap">
+            <input
+                type="text"
+                id="location_keyword"
+                placeholder="지역명 입력 (예: 강남, 신림, 홍대)">
+
+            <button onclick="searchLocation()">
+                지역 검색
+            </button>
+        </div>
+
+        <div id="theater_list"></div>
+
+    </div>
+
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4dcc4b41e1823f562173c66f2d54eaa6&libraries=services"></script>
+    <script src="../../js/map.js"></script>
+    <script src="../../js/common.js"></script>
+</body>
+</html>

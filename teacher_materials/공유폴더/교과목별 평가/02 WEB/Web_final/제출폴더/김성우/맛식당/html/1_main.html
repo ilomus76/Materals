@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맛식당!_1</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/1_main.css">
+    <script src="../js/1_main.js" defer></script>
+</head>
+<body>
+
+    <div id="wrap">
+
+        <header>
+            <button id="back_btn" onclick="location.href='./0_1_login.html'"> ❮ </button>
+
+            <img id="logo" src="../source/img/logo_b.png" alt="logo">
+
+            <button id="profile_btn" onclick="location.href='./4_personal_info.html'" ><img src="../source/img/profile_default.png" alt="profile"></button>
+            <!-- 프로필 누르면 개인정보 화면으로 이동 -->
+        </header>
+
+        <main>
+            <div id="top3">
+                <div id= "top_info">
+                    <img src="../source/img/crown.png" alt="crown">
+                    <h2>TOP 3 맛식당!</h2>
+                </div>
+                <div id="top_food">
+                    <div class="top">
+                        <span class="rank rank1">1</span>
+                        <img class="food" src="../source/food/food1.jpg" alt="food1">
+                        <p>제육볶음</p>
+                        <div class="heart">
+                            <img src="../source/img/heart.png" alt="heart">
+                            <p>36</p>
+                        </div>
+                    </div>
+                    <div class="top">
+                        <span class="rank rank2">2</span>
+                        <img class="food" src="../source/food/food2.jpg" alt="food2">
+                        <p>산더미불고기</p>
+                        <div class="heart">
+                            <img src="../source/img/heart.png" alt="heart">
+                            <p>25</p>
+                        </div>
+                    </div>
+                    <div class="top">
+                        <span class="rank rank3">3</span>
+                        <img class="food" src="../source/food/food3.jpg" alt="food3">
+                        <p>즉석떡볶이</p>
+                        <div class="heart">
+                            <img src="../source/img/heart.png" alt="heart">
+                            <p>21</p>
+                        </div>
+                    </div>
+                    <!-- 각 사진 및 내용은 등록함에 따라 달라지게끔 조정 필요 -->
+                    <!-- 클릭했을 때 각 게시글 페이지로 이동하도록 교체 필요 -->
+                </div>
+
+            </div>
+
+
+            <div id="contents">
+                <div id="contents_top">
+                    <img src="../source/img/spoon.png" alt="spoon">
+                    <h2>최근 여기 진짜 맛식당!</h2>
+                </div>
+
+                <div id="contents_menu">
+                    <div class="content">
+                        <img class="food" src="../source/food/food1.jpg" alt="food1">
+                        <p>제육볶음</p>
+                        <div class="heart">
+                            <img src="../source/img/heart.png" alt="heart">
+                            <p>36</p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <img class="food" src="../source/food/food2.jpg" alt="food2">
+                        <p>산더미불고기</p>
+                        <div class="heart">
+                            <img src="../source/img/heart.png" alt="heart">
+                            <p>25</p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <img class="food" src="../source/food/food3.jpg" alt="food3">
+                        <p>즉석떡볶이</p>
+                        <div class="heart">
+                            <img src="../source/img/heart.png" alt="heart">
+                            <p>21</p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <img class="food" src="../source/food/food4.jpg" alt="food4">
+                        <p>연어초밥</p>
+                        <div class="heart">
+                            <img src="../source/img/heart.png" alt="heart">
+                            <p>6</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 여기 있는 거 전체 이제 데이터 별로 바뀔 수 있도록.. 무한생성 필요 -->
+
+
+            </div>
+
+        </main>
+
+        <nav>
+            <button onclick="location.href='./2_contents_list.html'">맛식당 리스트</button>
+            <button onclick="location.href='./3_map.html'">맛식당 지도</button>
+            <button id="upload" onclick="location.href='./2_2_upload.html'"> 
+                <span class="plus">+</span>
+                <span class="upload-text">맛식당 등록</span> 
+            </button>
+        </nav>
+    </div>
+
+    <footer>
+        
+
+    
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+main {
+    grid-area: cc;  display: flex; flex-direction: column; align-items: center;
+    gap: 6px; padding: 10px; background-color: #ffffff; box-sizing: border-box;    
+}
+main img{
+    width: 100%; max-width: 250px; height: auto; aspect-ratio: 4 / 5; object-fit: cover; 
+    border-radius: 12px; border: 1px solid #f0f6fa;
+}
+.profile_info{
+    display: flex; justify-content: space-between; align-items: center;
+    width: 100%;  box-sizing: border-box; padding: 10px 20px; margin: 15px 0;
+}
+.profile_info span{
+    font-size: 1.1rem; font-weight: 700; color: #2c3e50; flex: 1;
+    text-align: center;
+}
+.profile_info span + span {border-left: 1px solid #bedaf3;}
+.profile_info .nickname {color: #3a8bcd;}
+p.profile_text{
+    color: rgb(10, 10, 66); width: 98%; height: 350px; border: 1px solid skyblue; border-radius: 8px; padding: 10px;
+    overflow-y: auto; font-size: 0.95rem; line-height: 1.6; box-sizing: border-box; margin-left: auto; margin-right: auto;
+}
+#star{display: flex; align-items: center; justify-content: center; gap: 44px; margin: 15px; width: 100%;}
+.star_rating{display: flex; gap: 5px;}
+.star{
+    font-size: 1.8rem; color: #bbe; cursor: pointer; transition: color 0.2s ease, transform 0.1s ease; user-select: none;
+}
+.star:hover{transform: scale(1.2);}
+.star.filled{color: #f39c12; content: "★";}
+#submit_star{
+    padding: 8px 16px; font-size: 0.95rem; font-weight: 700;  border: none; border-radius: 8px;
+    background-color: #e1eef6; color: #a3b8cc; cursor: not-allowed; transition: all 0.3s ease;
+}
+#submit_star.active {
+    background: linear-gradient(135deg, #9dd1f7 0%, #72b3e6 100%); color: #ffffff;
+    cursor: pointer;  box-shadow: 0 4px 10px rgba(114, 175, 222, 0.3);
+}
+#submit_star.active:hover {transform: translateY(-1px);  box-shadow: 0 6px 12px rgba(114, 175, 222, 0.45);}
+.reply{position: relative; width: 100%; margin: 10px; box-sizing: border-box;}
+#reply_text{
+    width: 100%; height: 100px; padding: 12px 75px 12px 12px; border: 1px solid #e1eef6; border-radius: 12px; 
+    font-weight: 440; font-family: inherit; font-size: 0.9rem; background-color: #f9fbfd; 
+    color: rgb(10, 10, 66); resize: none; box-sizing: border-box; transition: all 0.3s ease;
+}
+#reply_text:focus{outline: none; border-color: #9dd1f7; background-color: #ffffff; box-shadow: 0 0 8px rgba(157,209,247,0.2);}
+#submit_reply{
+    position: absolute; right: 10px; bottom: 10px; padding: 8px 16px;
+    font-size: 0.85rem; font-weight: 500; border: none; border-radius: 8px;
+    background: linear-gradient(135deg, #9dd1f7 0%, #72b3e6 100%); color: #ffffff; 
+    cursor: pointer; box-shadow: 0 2px 6px rgba(114,175,222,0.3); transition: all 0.2s ease;
+}
+#submit_reply:hover {transform: translateY(-1px);  box-shadow: 0 4px 10px rgba(114, 175, 222, 0.45);}

@@ -1,0 +1,128 @@
+.brand-page {
+    min-height: 100vh;
+    padding: 0;
+    background: #111;
+    color: #fff;
+}
+
+.brand-hero {
+    min-height: 100vh;
+    padding: 140px 7vw 70px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background:
+        linear-gradient(90deg,
+            rgba(0, 0, 0, .9) 0%,
+            rgba(0, 0, 0, .78) 42%,
+            rgba(0, 0, 0, .34) 68%,
+            rgba(0, 0, 0, .08) 100%),
+        url("/coffee/assets/images/MBCA-bg.png") center / cover no-repeat;
+}
+
+.brand-hero>p {
+    margin: 0 0 18px;
+
+    color: #ffd400;
+
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: .22em;
+}
+
+.brand-hero h1 {
+    max-width: 760px;
+    margin: 0 0 30px;
+
+    font-size: clamp(44px, 5.8vw, 86px);
+    line-height: 1.08;
+    font-weight: 900;
+}
+
+.brand-intro {
+    position: static;
+
+    width: min(700px, 100%);
+    margin: 0 0 36px;
+}
+
+.brand-intro p {
+    margin: 0 0 14px;
+
+    color: rgba(255, 255, 255, .9);
+
+    font-size: clamp(17px, 1.4vw, 22px);
+    font-weight: 700;
+    line-height: 1.65;
+}
+
+.brand-values {
+    position: static;
+
+    width: min(100%, 1120px);
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+
+    background: rgba(0, 0, 0, .58);
+
+    border: 1px solid rgba(255, 255, 255, .16);
+    backdrop-filter: blur(10px);
+}
+
+.brand-values article {
+    min-height: 150px;
+    padding: 28px;
+
+    border-right: 1px solid rgba(255, 255, 255, .18);
+}
+
+.brand-values article:last-child {
+    border-right: 0;
+}
+
+.brand-values h2 {
+    margin: 0 0 12px;
+
+    color: #fff;
+
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.brand-values p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, .78);
+
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+    .brand-hero {
+        min-height: auto;
+        padding: 120px 24px 60px;
+    }
+
+    .brand-hero h1 {
+        font-size: clamp(42px, 12vw, 64px);
+    }
+
+    .brand-values {
+        grid-template-columns: 1fr;
+    }
+
+    .brand-values article {
+        border-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, .18);
+    }
+
+    .brand-values article:last-child {
+        border-bottom: 0;
+    }
+}

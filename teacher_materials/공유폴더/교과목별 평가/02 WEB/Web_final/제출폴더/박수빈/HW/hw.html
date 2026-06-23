@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YarrBook</title>
+
+    <link rel="stylesheet" href="./css/hw.css"> 
+    <link rel="stylesheet" href="./css/book-search.css">
+    
+
+</head> 
+
+<body>
+<header>
+
+    <div class="header-top">
+
+        <a href="hw.html" class="logo">
+            YArrBook
+        </a>
+
+        <div class="user-menu" id="userMenu">
+            <a href="login.html">로그인</a>
+            <a href="newin.html">회원가입</a>
+        </div>
+
+    </div>
+
+    <nav>
+        <ul>
+
+            <li class="dropdown">
+                <a href="#" onclick="loadPage('book-search.html')">도서 찾기</a>
+
+                <ul class="submenu">
+                    <li><a href="#" onclick="loadPage('popular.html')">인기 도서</a></li>
+                    <li><a href="#" onclick="loadPage('new-books.html')">신간 도서</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="#" onclick="loadPage('record.html')">독서 기록</a>
+
+                <ul class="submenu">
+                    <li><a href="#" onclick="loadPage('write.html')">새 글 쓰기</a></li>
+                    <li><a href="#">독후감 랭킹</a></li>
+
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="#" onclick="loadPage('community.html')">커뮤니티</a>
+
+                <ul class="submenu">
+                    <li><a href="#">자유 게시글</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="#" onclick="loadPage('local.html')">우리동네 야르</a>
+
+                <ul class="submenu">
+                    <li><a href="#">독서모임</a></li>
+                    <li><a href="kakaomap.html">독서공간 찾기</a></li>
+
+                </ul>
+            </li>
+
+        </ul>
+    </nav>
+
+</header>
+
+<main id="content">
+
+    <div>
+
+        <section>
+            <hr id="line">
+            <h2 id="monthBook"></h2>
+
+            <div id="book-list">
+                <a href="#" onclick="loadPage('./books/book1.html')" class="book-card">
+                    <img src="./img/데미안.jpeg" alt="데미안">
+                    <h3>데미안</h3>
+                    <p>헤르만 헤세</p>
+                </a>
+
+
+                <a href="#" onclick="loadPage('./books/book2.html')" class="book-card">                    
+                    <img src="./img/불편한편의점.jpeg" alt="불편한 편의점">
+                    <h3>불편한 편의점</h3>
+                    <p>김호연</p>
+                </a>
+
+
+                <a href="#" onclick="loadPage('./books/book3.html')" class="book-card">                    
+                    <img src="./img/어린왕자.jpeg" alt="어린 왕자">
+                    <h3>어린 왕자</h3>
+                    <p>생텍쥐페리</p>
+                </a>
+
+
+                <a href="#" onclick="loadPage('./books/book4.html')" class="book-card">                    
+                    <img src="./img/해리포터.jpeg" alt="해리포터">
+                    <h3>해리포터</h3>
+                    <p>J.K. 롤링</p>
+                </a>
+                
+                
+            </div>
+
+
+        </section>
+
+        <br>
+        <br>
+        <hr id="line">
+        <section>
+        
+            <h2 id="monthTitle"></h2>
+
+             <div id="person-list">
+                <a href="#" onclick="loadPage('../person-list/person1.html')" class="person-card">
+                    <img src="./img/최승현.jpeg" alt="최승현">
+                    <h3>최승현</h3>
+                    <p>Like:11.5k♥</p>
+                </a>
+
+
+                <a href="#" onclick="loadPage('../person-list/person2.html')" class="person-card">                    
+                    <img src="./img/지창욱.jpeg" alt="지창욱">
+                    <h3>지창욱</h3>
+                    <p>Like:5.8k♥</p>
+                </a>
+
+
+                <a href="#" onclick="loadPage('../person-list/person3.html')" class="person-card">                    
+                    <img src="./img/전지현.jpeg" alt="전지현">
+                    <h3>전지현</h3>
+                    <p>Like:20k♥</p>
+                </a>
+
+
+                <a href="#" onclick="loadPage('../person-list/person4.html')" class="person-card">                    
+                    <img src="./img/김지원.jpeg" alt="김지원">
+                    <h3>김지원</h3>
+                    <p>Like:21k♥</p>
+                </a>
+                
+                
+            </div>
+
+        </section>
+
+    </div>
+    
+
+</main>
+
+<footer>
+    <p>© 2026 YArrBook. All rights reserved.</p>
+
+    <div class="footer-menu">
+        <a href="#">이용약관</a>
+        <a href="#">개인정보처리방침</a>
+        <a href="#">문의하기</a>
+    </div>
+</footer>
+
+<script src="./js/hw.js"></script>
+<script src="./js/book-search.js"></script>
+
+</body>
+</html>

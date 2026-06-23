@@ -1,0 +1,9 @@
+@import url(./login.css);
+
+.wrap{
+    text-align: center;
+}
+
+.my_id{
+    font-size: 1.5rem;
+}

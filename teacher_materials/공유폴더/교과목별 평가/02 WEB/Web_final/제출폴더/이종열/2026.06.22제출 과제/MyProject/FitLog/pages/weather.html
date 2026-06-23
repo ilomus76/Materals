@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날씨 기반 운동 추천 받기</title>
+
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/weather.css">
+
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ec4486c2900facaaeedb1086ccb2c02d&libraries=services"></script>
+    <script src="../js/weather.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <!-- 앱 로고 영역 -->
+        <div id="app_logo">
+            <h1>FitLog</h1>
+        </div>
+    </header>
+    <main>
+        <!-- 운동 시간, 경력 입력 영역 -->
+        <section id="weatherSection">
+            <h2>날씨를 기반으로 한 운동 추천 받아보기</h2>
+            <input id="cityInput" placeholder="지역 입력 (예 : 서울)">
+            <button onclick="getWeather()">조회</button>
+        </section>
+
+        <!-- 날씨 기반 추천 결과 -->
+        <section id="resultSection">
+            <h2>검색 결과</h2>
+            <div id="weatherResult"></div>
+        </section>
+
+    </main>
+
+    <!-- 하단 바 영역 -->
+    <nav id="bottom_bar">
+        <ul>
+            <li><a href="../index.html">홈</a></li>
+            <li><a href="./board.html">게시판</a></li>
+            <li><a href="./gym.html">헬스장</a></li>
+            <li><a href="./weather.html">날씨 기반 운동 추천</a></li>
+            <li><a href="./mypage.html">마이</a></li>
+        </ul>
+    </nav>
+    
+</body>
+</html>

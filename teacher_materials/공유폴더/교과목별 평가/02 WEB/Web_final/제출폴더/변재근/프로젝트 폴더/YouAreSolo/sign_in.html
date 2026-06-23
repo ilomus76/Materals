@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 - 너는솔로</title>
+    <style>
+        body {
+            background-color: #f4f9fc;
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #2c3e50; margin: 0; padding: 0;
+            display: flex; justify-content: center; align-items: center; min-height: 100vh;
+        }
+        #wrap {
+            max-width: 450px; width: 100%; padding: 30px 20px; box-sizing: border-box;
+            background: #d9edf7; border: 1px solid #e1eef6; border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(163, 197, 222, 0.2);  margin: 20px auto;
+        }
+        h2 { text-align: center; color: #3a8bcd; margin-bottom: 25px; }
+        .input_group { margin-bottom: 18px; }
+        .input_group label { display: block; font-weight: 600; margin-bottom: 6px; color: #5b7e96; font-size: 0.9rem; }
+        .input_group input, .input_group select {
+            width: 100%; height: 48px; border: 1px solid #bedafc; border-radius: 12px;
+            padding: 0 14px; box-sizing: border-box; font-size: 1rem; color: #2c3e50; outline: none;
+        }
+        .input_group input:focus { border-color: #72b3e6; box-shadow: 0 0 0 3px rgba(114, 175, 222, 0.15); }
+        .input_group input[type="file"]{padding-top: 10px;}
+        #submit_btn {
+            width: 100%; height: 56px; border: none; border-radius: 14px;
+            background: linear-gradient(135deg, #9dd1f7 0%, #72b3e6 100%);
+            color: white; font-size: 1.1rem; font-weight: 700; cursor: pointer;
+            margin-top: 15px; box-shadow: 0 4px 12px rgba(114, 175, 222, 0.2);
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <h2>솔로나라 입성하기</h2>
+    <form action="./sign_in.php" method="POST" enctype="multipart/form-data" id="reg_form">
+        <div class="input_group">
+            <label for="userid">아이디</label>
+            <input type="text" id="userid" name="userid" placeholder="사용할 아이디 입력" required>
+        </div>
+        <div class="input_group">
+            <label for="password">비밀번호</label>
+            <input type="password" id="password" name="password" placeholder="비밀번호 입력" required>
+        </div>
+        <div class="input_group">
+            <label for="name">이름 (닉네임)</label>
+            <input type="text" id="name" name="name" placeholder="예: 영숙, 영철, 영호 등" required>
+        </div>
+        <div class="input_group">
+            <label for="gender">성별</label>
+            <select id="gender" name="gender" required>
+                <option value="">성별을 선택하세요</option>
+                <option value="M">남성</option>
+                <option value="W">여성</option>
+            </select>
+        </div>
+            <div class="input_group">
+            <label for="height">키(cm) ←숫자만 입력하세요!</label>
+            <input type="number" id="height" name="height" placeholder="숫자만 입력 (예: 186)" min="100" max="250" required>
+        </div>
+        <div class="input_group">
+            <label for="job">직업</label>
+            <input type="text" id="job" name="job" placeholder="예: 의사, 변호사, 개발자 등" required>
+        </div>
+        <div class="input_group">
+            <label for="profile_img">프로필 사진은 필수입니다!</label>
+            <input type="file" id="profile_img" name="profile_img" accept="image/*">
+        </div>
+        <button type="submit" id="submit_btn">가입 신청 완료</button>
+    </form>
+</div>
+<script>
+    const useridInput = document.getElementById('userid');
+    const regForm = document.getElementById('reg_form');
+    let isIdValid = false; 
+    useridInput.addEventListener('change', function() {
+        const userid = this.value.trim();
+        
+        if(userid === "") {
+            isIdValid = false;
+            return;
+        }
+        const formData = new FormData();
+        formData.append('userid', userid);
+        fetch('./check_id.php', {method: 'POST', body: formData})
+        .then(response => response.json())
+        .then(data => {
+            if(data.exists) {                
+                alert("기존에 존재하는 아이디 입니다. 다른 아이디로 입력해주세요.");
+                useridInput.value = ""; 
+                useridInput.focus();   
+                isIdValid = false;   
+            } else {               
+                isIdValid = true;
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });    
+    regForm.addEventListener('submit', function(event) {
+    const profileImgInput = document.getElementById('profile_img');    
+    if (!profileImgInput.value) {
+        event.preventDefault(); 
+        alert("프로필 사진은 필수입니다! 본인 사진을 첨부해 주세요.");
+        profileImgInput.focus();
+        return;
+    }
+    if (!isIdValid) {
+        event.preventDefault();
+        alert("아이디 중복 여부를 다시 확인해 주세요.");
+        useridInput.focus();
+    }
+});
+</script>
+</body>
+</html>

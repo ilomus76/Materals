@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인창</title>
+    <link rel="stylesheet" href="../css/login.css">
+
+</head>
+<body>
+    <div class="main_div_wrap"> 
+        <div class="main_title">
+            <h2><a href="../index.html">MBCA</a><br>학습 문의 게시판</h2>
+            <p>수강학생들의<br> 학습 질문과 정보를 공유하는 공간</p>
+        </div>
+        <form action="../backend/login.php" class="login_box" method="post">
+            <input id="id_push" type="text" placeholder="아이디 입력" name="user_id">
+            <input id="password_push" type="password" placeholder="비밀번호 입력" name="user_pw">
+            <button class="btn_login" type="submit">로그인</button>
+            
+
+        </form>
+        
+        <div class="main_btn_signup">
+            <a href="../board/signup.html" class="signup">회원가입</a>
+            <a href="./signuperror.html" class="signup">아이디 찾기</a> <!--기능구현준비중페이지로 이동-->
+            <a href="./signuperror.html" class="signup">비밀번호 찾기</a>
+            
+        </div>
+    </div>
+    
+</body>
+</html>

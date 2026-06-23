@@ -1,0 +1,202 @@
+.auth-page {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 110px 20px 50px;
+    background: #ffd400;
+    color: #222;
+}
+
+.auth-card {
+    width: min(100%, 430px);
+    padding: 34px;
+    border: 3px solid #222;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.auth-head {
+    margin-bottom: 26px;
+}
+
+.auth-head p {
+    margin: 0 0 8px;
+    color: #666;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+}
+
+.auth-head h1 {
+    margin: 0 0 10px;
+    font-size: 44px;
+    line-height: 1;
+}
+
+.auth-head span {
+    color: #666;
+    font-weight: 700;
+}
+
+.auth-error {
+    padding: 12px;
+    background: #222;
+    color: #ffd400;
+    font-weight: 900;
+}
+
+.auth-form {
+    display: grid;
+    gap: 10px;
+}
+
+.auth-form label {
+    font-weight: 900;
+}
+
+.auth-form input {
+    height: 48px;
+    padding: 0 14px;
+    border: 2px solid #222;
+    font-size: 15px;
+}
+
+.auth-form button {
+    height: 52px;
+    margin-top: 10px;
+    border: 0;
+    background: #222;
+    color: #ffd400;
+    font-size: 16px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.auth-links {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.auth-links a {
+    color: #666;
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+@media (max-width: 520px) {
+    .auth-card {
+        padding: 26px 20px;
+    }
+
+    .auth-links {
+        flex-wrap: wrap;
+    }
+}
+
+.signup-card {
+    width: min(100%, 520px);
+}
+
+.check-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    color: #666;
+    font-size: 14px;
+}
+
+.check-label input {
+    width: 18px;
+    height: 18px;
+}
+
+.form-page {
+    min-height: 100vh;
+
+    padding: 140px 20px 80px;
+
+    background: #ffd400;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.form-card {
+    width: 100%;
+    max-width: 500px;
+
+    background: #fff;
+
+    padding: 40px;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, .08);
+}
+
+.form-card h1 {
+    margin-top: 0;
+    margin-bottom: 30px;
+
+    text-align: center;
+
+    font-size: 40px;
+}
+
+.form-card label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: 900;
+}
+
+.form-card input {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 12px;
+
+    margin-bottom: 20px;
+
+    box-sizing: border-box;
+}
+
+.form-card button {
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #111;
+
+    color: #ffd400;
+
+    font-size: 16px;
+    font-weight: 900;
+
+    cursor: pointer;
+}
+
+.form-links {
+    margin-top: 20px;
+
+    text-align: center;
+}
+
+.form-links a {
+    color: #111;
+    text-decoration: none;
+    font-weight: 700;
+}

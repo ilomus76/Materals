@@ -1,0 +1,80 @@
+@import url(./common.css);
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f5f5f5;
+}
+
+.main_div_wrap{
+    width:100%;
+    max-width:40rem;
+    padding:4rem 3rem;
+    background:white;
+    border-radius:1rem;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.main_title{
+    text-align:center;
+    margin-bottom:3rem;
+}
+
+.main_title h2{
+    font-size:2.8rem;
+    margin-bottom:1rem;
+}
+
+.main_title p{
+    font-size:1.4rem;
+    color:#666;
+}
+
+.signup_inputbox{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:1.5rem;
+}
+
+.signup_inputbox input{
+    padding:1rem;
+    font-size:1.5rem;
+    border:1px solid #ccc;
+    border-radius:0.5rem;
+}
+
+.signup_btnbox{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    margin-top:2rem;
+}
+
+.signup_btnbox button,
+.signup_btnbox a{
+    display: inline-block;
+    width:48%;
+    padding:1.2rem;
+    border-radius:0.5rem;
+    font-size:1.6rem;
+    text-align:center;
+    cursor:pointer;
+}
+
+#btn_signup_page{
+    border:none;
+    background:#2563eb;
+    color:white;
+}
+
+#btn_cancel{
+    border:1px solid #2563eb;
+    background:white;
+    color:#2563eb;
+}

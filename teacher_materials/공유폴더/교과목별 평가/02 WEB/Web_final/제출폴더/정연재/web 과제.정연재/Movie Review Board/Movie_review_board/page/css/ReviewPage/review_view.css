@@ -1,0 +1,202 @@
+@import url(../common.css);
+
+.title h2{
+    padding: 10px;
+    border-bottom: 2px solid #222222;
+}
+
+/* 전체 너비 설정 */
+
+.view_wrap{
+    border: 2px solid #222222;
+    width: 80%;
+    margin: 10px auto;
+}
+
+/* 첫째줄 설정 */
+
+.view_wrap .view_title_wrap{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1.2rem;
+    border-bottom: 2px dashed #222222;
+    margin: 10px auto;
+    padding-bottom: 10px;
+}
+
+.view_wrap .view_title_wrap .col_label{
+    border-right: 2px solid #222222;
+    box-sizing: border-box;
+    width: 20%;
+}
+
+.view_wrap .view_title_wrap .col_input{
+    box-sizing: border-box;
+    width: 80%;
+}
+
+/* 둘째줄 설정 */
+
+.view_wrap .col1_wrap{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1.2rem;
+    border-bottom: 2px dashed #222222;
+    margin: 10px auto;
+    padding-bottom: 10px;
+}
+
+/* 작성자 칸 설정 */
+
+.view_wrap .col1_wrap .view_writer_wrap{
+    box-sizing: border-box;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    border-right: 2px solid #222222;
+}
+
+.view_wrap .col1_wrap .view_writer_wrap .col_label{
+    box-sizing: border-box;
+    width: 40%;
+    border-right: 2px solid #222222;
+}
+
+.view_wrap .col1_wrap .view_writer_wrap .col_input{
+    box-sizing: border-box;
+    width: 60%;
+}
+
+/* 작성일 칸 설정 */
+
+.view_wrap .col1_wrap .view_date_wrap{
+    box-sizing: border-box;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.view_wrap .col1_wrap .view_date_wrap .col_label{
+    box-sizing: border-box;
+    width: 40%;
+    border-right: 2px solid #222222;
+}
+
+.view_wrap .col1_wrap .view_date_wrap .col_input{
+    box-sizing: border-box;
+    width: 60%;
+}
+
+/* 셋째줄 설정 */
+
+.view_wrap .col2_wrap{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #222222;
+    margin: 10px auto;
+    padding-bottom: 10px;
+}
+
+/* 영화명 칸 설정 */
+
+.view_wrap .col2_wrap .view_movie_title_wrap{
+    box-sizing: border-box;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    border-right: 2px solid #222222;
+}
+
+.view_wrap .col2_wrap .view_movie_title_wrap .col_label{
+    box-sizing: border-box;
+    width: 40%;
+    border-right: 2px solid #222222;
+}
+
+.view_wrap .col2_wrap .view_movie_title_wrap .col_input{
+    box-sizing: border-box;
+    width: 60%;
+}
+
+/* 조회수 칸 설정 */
+
+.view_wrap .col2_wrap .view_hits_wrap{
+    box-sizing: border-box;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.view_wrap .col2_wrap .view_hits_wrap .col_label{
+    box-sizing: border-box;
+    width: 40%;
+    border-right: 2px solid #222222;
+}
+
+.view_wrap .col2_wrap .view_hits_wrap .col_input{
+    box-sizing: border-box;
+    width: 60%;
+}
+
+/* 컨텐츠 값 설정 */
+
+.view_content_wrap{
+    font-size: 1rem;
+    background-color: black;
+    width:100%;
+    box-sizing: border-box;
+    height: 30rem;
+    padding: 1rem;
+    color: white;
+    resize: none;
+    margin-bottom: 10px;
+}
+
+.view_content_wrap div{
+    box-sizing: border-box;
+    border: 2px solid #222222;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    padding: 1rem;
+}
+
+/* 버튼 값 설정 */
+
+.view_wrap .view_btn_wrap{
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 35%;
+    margin-bottom: 20px;
+}
+
+.view_wrap .view_btn_wrap .list_btn_wrap a{
+    box-sizing: border-box;
+    display: inline-block;
+    width: 4rem;
+    font-size: 1.2rem;
+    background-color: black;
+    border: 2px solid #222222;
+    border-radius: 4px;
+    color: white;
+    padding: 10px;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.view_wrap .view_btn_wrap button{
+    box-sizing: border-box;
+    width: 4rem;
+    font-size: 1.2rem;
+    background-color: black;
+    border: 2px solid #222222;
+    border-radius: 4px;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}

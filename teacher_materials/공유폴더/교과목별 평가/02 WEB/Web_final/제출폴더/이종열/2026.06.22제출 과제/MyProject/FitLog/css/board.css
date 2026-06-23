@@ -1,0 +1,266 @@
+/* =========================
+   BOARD PAGE
+========================= */
+
+main.container{
+    padding-top:20px;
+}
+
+main h2{
+    margin-bottom:20px;
+    color:#6d28d9;
+}
+
+/* =========================
+   WRITE BUTTON
+========================= */
+
+#write_btn{
+    display:flex;
+    justify-content:flex-end;
+
+    margin-bottom:15px;
+}
+
+#write_btn button{
+    border:none;
+
+    background:#7c3aed;
+
+    color:white;
+
+    padding:12px 20px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+#write_btn button:hover{
+    background:#6d28d9;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+#searchBoard{
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid #ddd;
+
+    border-radius:12px;
+
+    margin-bottom:10px;
+
+    outline:none;
+}
+
+.search_group{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-bottom:20px;
+}
+
+.search_group button{
+
+    width:60px;
+    height:60px;
+
+    border:none;
+
+    background:#7c3aed;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    flex-shrink:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.search_group button img{
+
+    width:24px;
+    height:24px;
+
+    object-fit:contain;
+}
+
+/* =========================
+   POST LIST
+========================= */
+
+#postList{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+/* JS에서 생성될 카드 */
+
+.post_card{
+    background:white;
+
+    border-radius:20px;
+
+    padding:20px;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.post_card:hover{
+    transform:translateY(-3px);
+}
+
+.post_header{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:10px;
+}
+
+.post_author{
+    font-weight:700;
+    color:#7c3aed;
+    font-size:0.9rem;
+}
+
+.post_date{
+    color:#999;
+    font-size:.85rem;
+}
+
+.post_title{
+    font-size:1.2rem;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+    color:#111;
+}
+
+.post_content{
+    color:#555;
+
+    line-height:1.7;
+
+    margin-bottom:15px;
+}
+
+.post_footer{
+    display:flex;
+
+    gap:15px;
+
+    color:#888;
+}
+
+/* =========================
+   EMPTY
+========================= */
+
+.empty_post{
+    background:white;
+
+    padding:30px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    color:#999;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.08);
+}
+
+.post_card h3{
+    margin-bottom:10px;
+}
+
+.post_card h3:first-child{
+    font-size:0.9rem;
+    color:#7c3aed;
+}
+
+.post_card h3:nth-child(2){
+    font-size:1.3rem;
+    color:#222;
+}
+
+.post_card p{
+    margin-top:10px;
+    line-height:1.6;
+    color:#555;
+}
+
+.button_group{
+    display:flex;
+    gap:10px;
+
+    margin-top:20px;
+}
+
+.modify_btn,
+.delete_btn{
+    border:none;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-weight:600;
+}
+
+.modify_btn{
+    background:#7c3aed;
+    color:white;
+}
+
+.delete_btn{
+    background:#ef4444;
+    color:white;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .search_group{
+        flex-direction:column;
+    }
+
+    .search_group button{
+        width:100%;
+        height:50px;
+    }
+
+    .button_group{
+        flex-direction:column;
+    }
+
+}

@@ -1,0 +1,201 @@
+*{margin:0; padding:0%; box-sizing: border-box;}
+body {font-family: sans-serif;}
+
+header {width: 100%;}
+.header-top {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 32px;
+    font-weight: bold;
+    color: black;
+}
+
+.user-menu a {
+    text-decoration: none;
+    color: black;
+    margin-left: 15px;
+}
+
+nav {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 50px;
+    padding: 15px;
+}
+nav a {
+    text-decoration: none;
+    color: black;
+}
+.dropdown {
+    position: relative;
+}
+.submenu {
+    display: none;
+
+    position: absolute;
+
+    top: 100%;
+
+    left: 0;
+
+    background: white;
+
+    min-width: 150px;
+
+    list-style: none;
+
+    border: 1px solid #ddd;
+}
+.submenu li {
+    padding: 10px;
+}
+.dropdown:hover .submenu {
+    display: block;
+}
+
+#monthBook,
+#monthTitle {
+    margin-bottom: 40px;
+}
+
+#book-list, #person-list{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+#line {
+    border: 0;
+    border-top: 1px solid #ddd;
+}
+
+.book-card, .person-card {
+    width: 150px;
+    text-decoration: none;
+    color: black;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+.book-card img {
+    width: 130px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.person-card img {
+    width: 130px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}
+
+.person-card:hover {
+  transform: translateY(-5px);
+}
+
+footer {
+    margin-top: 80px;
+    padding: 30px;
+    text-align: center;
+    background-color: #ddd;
+    color: #555;
+}
+
+.footer-menu a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #555;
+}
+
+.book-page{
+
+    width:90%;
+    max-width:1100px;
+    margin:50px auto;
+
+}
+
+
+
+.page-title{
+
+    font-size:30px;
+    margin-bottom:40px;
+
+}
+
+
+
+.book-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(5, 1fr);
+
+    gap:40px 25px;
+
+}
+
+
+
+.book-item{
+
+    text-align:center;
+
+    cursor:pointer;
+
+}
+
+
+
+.book-item img{
+
+    width:150px;
+
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+
+}
+
+
+
+.book-item h3{
+
+    margin-top:15px;
+
+}
+
+
+
+.book-item p{
+
+    color:#777;
+
+    margin-top:5px;
+
+}

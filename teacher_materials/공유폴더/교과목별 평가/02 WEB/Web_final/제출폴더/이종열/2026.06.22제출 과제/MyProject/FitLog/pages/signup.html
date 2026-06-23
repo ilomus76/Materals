@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 화면</title>
+
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/signup.css">
+
+    <script src="../js/signup.js" defer></script>
+</head>
+<body>
+    
+    <header>
+        <!-- 앱 로고 영역 -->
+        <div id="app_logo">
+            <h1>FitLog</h1>
+        </div>
+    </header>
+
+    <main>
+        <form id="signupForm">
+            <label><input id="profileImage" type="file" accept="image/*">프로필 이미지</label>
+            <input id="nameInput" placeholder="이름">
+            <input id="emailInput" type="email" placeholder="이메일">
+            <input id="passwordInput" type="password" placeholder="비밀번호">
+            <input id="passwordCheckInput" type="password" placeholder="비밀번호 확인">
+            <button type="submit">회원가입</button>
+            <a href="./login.html">로그인</a>
+        </form>
+    </main>
+
+    <!-- 하단 바 영역 -->
+    <nav id="bottom_bar">
+        <ul>
+            <li><a href="../index.html">홈</a></li>
+            <li><a href="./board.html">게시판</a></li>
+            <li><a href="./gym.html">헬스장</a></li>
+            <li><a href="./weather.html">날씨 기반 운동 추천</a></li>
+            <li><a href="./mypage.html">마이</a></li>
+        </ul>
+    </nav>
+
+</body>
+</html>

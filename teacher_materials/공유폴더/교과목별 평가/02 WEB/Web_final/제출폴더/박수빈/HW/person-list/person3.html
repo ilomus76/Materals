@@ -1,0 +1,280 @@
+<div class="profile-page">
+
+
+<div class="profile-header">
+
+
+<img src="./img/전지현.jpeg"
+class="profile-img">
+
+
+<div class="profile-info">
+
+
+<h2>전지현</h2>
+
+<h3>✨ 베스트 리뷰어</h3>
+
+
+<p>
+책의 감정과 메시지를 섬세하게 기록하는
+YArrBook 인기 독서 기록가입니다.
+</p>
+
+
+<p>
+📚 좋아하는 분야 : 문학, 에세이, 소설
+</p>
+
+
+<p>
+좋은 문장을 찾아 공유하며 많은 독자들의
+공감을 받고 있습니다.
+</p>
+
+
+
+<div class="stats">
+
+
+<div>
+<strong>156</strong>
+<span>독서 기록</span>
+</div>
+
+
+<div>
+<strong>20k</strong>
+<span>좋아요</span>
+</div>
+
+
+<div>
+<strong>58</strong>
+<span>읽은 책</span>
+</div>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+
+<div class="record-section">
+
+
+<h2>📖 인기 독서 기록</h2>
+
+
+<div class="record-card">
+
+<h3>불편한 편의점</h3>
+
+<p>
+따뜻한 이야기와 작은 친절의 의미를
+생각하게 만든 책입니다.
+</p>
+
+<button onclick="like(this)">
+❤️ 5,230
+</button>
+
+</div>
+
+
+
+<div class="record-card">
+
+<h3>어린 왕자</h3>
+
+<p>
+시간이 지나 다시 읽어도 새로운 의미를
+찾을 수 있는 작품입니다.
+</p>
+
+<button onclick="like(this)">
+❤️ 4,810
+</button>
+
+</div>
+
+
+</div>
+
+
+
+<style>
+
+.profile-page{
+width:90%;
+max-width:1000px;
+margin:50px auto;
+}
+
+
+.profile-header{
+
+display:flex;
+align-items:center;
+gap:50px;
+
+background:white;
+padding:40px;
+
+border-radius:20px;
+
+box-shadow:0 5px 20px #ddd;
+
+}
+
+
+
+.profile-img{
+
+width:200px;
+height:200px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+}
+
+
+.profile-info{
+
+flex:1;
+
+}
+
+
+.profile-info h2{
+
+font-size:38px;
+
+}
+
+
+
+.profile-info h3{
+
+color:#b8860b;
+
+}
+
+
+
+.profile-info p{
+
+color:#555;
+
+line-height:1.8;
+
+}
+
+
+
+.stats{
+
+display:flex;
+
+gap:40px;
+
+margin-top:25px;
+
+}
+
+
+
+.stats div{
+
+text-align:center;
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+
+
+.stats strong{
+
+font-size:24px;
+
+}
+
+
+
+.record-section{
+
+margin-top:50px;
+
+}
+
+
+
+.record-card{
+
+position:relative;
+
+background:#fafafa;
+
+padding:25px;
+
+margin:20px 0;
+
+border-radius:15px;
+
+}
+
+
+
+.record-card button{
+
+position:absolute;
+
+right:20px;
+
+top:20px;
+
+border:none;
+
+background:white;
+
+padding:10px;
+
+border-radius:20px;
+
+}
+
+
+</style>
+
+
+<script>
+
+function like(btn){
+
+let n =
+Number(
+btn.innerText
+.replace("❤️","")
+.replace(",","")
+.trim()
+);
+
+
+n++;
+
+btn.innerText =
+"❤️ "+n.toLocaleString();
+
+}
+
+</script>

@@ -1,0 +1,56 @@
+@import url('./common.css');
+
+
+.wrap{
+    display: grid;
+    grid-template-columns: 33fr 1px 66fr;
+    border: 2px solid black;
+    height: 100vh;
+}
+
+.line{
+    background-color: yellow;
+}
+
+.menu{
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 20px;
+    margin: 10px 10px;
+}
+
+.inner_menu{
+    margin: 10px;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.inner_menu #logo{
+    font-size: 3rem;
+    font-family: 'font1',serif;
+    color: red;
+}
+.inner_menu img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.showcase{
+    border: 1px solid gray;
+    border-radius: 20px;
+    margin: 10px 10px;
+    min-height: 300px;
+}
+
+.showcase h2{
+    font-size: 4rem;
+    padding: 5px 30px;
+}
+
+.showcase p{
+    font-size: 1.5rem;
+    padding: 10px 30px;
+}

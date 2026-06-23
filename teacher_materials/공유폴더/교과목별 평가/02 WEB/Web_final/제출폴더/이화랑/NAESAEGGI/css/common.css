@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+body{
+    font-size: 10px;
+}
+
+@font-face {
+    font-family: 'font1';
+    src: url("../font/온글잎\ 박다현체.ttf");
+}
+
+@font-face {
+    font-family: 'font2';
+    src: url("../font/CookieRun\ Black.otf");
+}
+
+@font-face {
+    font-family: 'font3';
+    src: url("../font/Jalnan.ttf");
+}
+
+@font-face {
+    font-family: 'font4';
+    src: url("../font/aaa.ttf");
+}

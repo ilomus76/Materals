@@ -1,0 +1,164 @@
+@import url(./common.css);
+
+body{
+    min-height:100vh;
+    background:#f5f5f5;
+}
+
+.main_wrap{
+    width:100%;
+    max-width:80rem;
+    margin:0 auto;
+    padding:3rem 2rem;
+}
+
+.main_header{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:1rem;
+    margin-bottom:3rem;
+}
+
+.main_header h1{
+    font-size:2.2rem;
+}
+
+.main_nav{
+    display:flex;
+    gap:1rem;
+}
+
+.main_nav a{
+    padding:0.8rem 1.2rem;
+    background:white;
+    border:1px solid #ccc;
+    border-radius:0.5rem;
+    font-size:1.4rem;
+}
+
+.write_form{
+    padding:2rem;
+    background:white;
+    border-radius:1rem;
+}
+
+.write_form_top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:2rem;
+}
+
+.write_form_top h2{
+    font-size:2.2rem;
+}
+
+.write_form_top a{
+    padding:0.8rem 1.2rem;
+    border:1px solid #ccc;
+    border-radius:0.5rem;
+    font-size:1.4rem;
+}
+
+.form_group{
+    margin-bottom:1.6rem;
+}
+
+.write_form p{
+    margin-bottom:0.6rem;
+    font-size:1.4rem;
+    font-weight:600;
+}
+
+.write_form select,
+.write_form input,
+.write_form textarea{
+    width:100%;
+    padding:1rem;
+    border:1px solid #ccc;
+    border-radius:0.5rem;
+    font-size:1.4rem;
+}
+
+.write_form textarea{
+    min-height:20rem;
+    resize:vertical;
+}
+
+.write_btnbox{
+    display:flex;
+    gap:1rem;
+    margin-top:2rem;
+}
+
+.write_btnbox a,
+.write_btnbox button{
+    flex:1;
+    padding:1rem;
+    border-radius:0.5rem;
+    font-size:1.5rem;
+    text-align:center;
+}
+
+.write_btnbox a{
+    background:white;
+    border:1px solid #ccc;
+}
+
+.write_btnbox button{
+    background:#2563eb;
+    color:white;
+    border:none;
+}
+@media screen and (min-width:768px){
+
+    .main_header{
+        flex-direction:row;
+        justify-content:space-between;
+    }
+}
+
+@media screen and (max-width:480px){
+
+    .main_wrap{
+        padding:2rem 1.5rem;
+    }
+
+    .main_header h1{
+        text-align:center;
+        line-height:1.4;
+        word-break:keep-all;
+    }
+
+    .main_nav{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .main_nav a{
+        white-space:nowrap;
+    }
+
+    .write_form{
+        padding:2rem 1.5rem;
+    }
+
+    .write_form_top{
+        flex-direction:column;
+        align-items:stretch;
+        gap:1rem;
+    }
+
+    .write_form_top h2{
+        text-align:center;
+    }
+
+    .write_form_top a{
+        text-align:center;
+    }
+
+    .write_btnbox{
+        flex-direction:column;
+    }
+}

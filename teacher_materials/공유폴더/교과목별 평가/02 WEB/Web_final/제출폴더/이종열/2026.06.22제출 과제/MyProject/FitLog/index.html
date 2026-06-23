@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLog</title>
+
+    <link rel="stylesheet" href="./css/common.css">
+
+    <script src="./js/exercise.js" defer></script>
+    <script src="./js/index.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <!-- 앱 로고 영역 -->
+        <div id="app_logo">
+            <h1>FitLog</h1>
+            <p id="welcomeText"></p>
+        </div>
+
+        <!-- 로그인 영역 -->
+        <div id="auth_area">
+            <button id="loginBtn" onclick="location.href='./pages/login.html'">로그인</button>
+            <button id="signupBtn" onclick="location.href='./pages/signup.html'">회원가입</button>
+            <button id="logoutBtn">로그아웃</button>
+        </div>
+    </header>
+
+    <!-- 콘텐츠가 표시되는 영역 -->
+    <main class="container">
+
+        <section id="heroSection">
+
+            <h2>오늘도 운동 목표 달성하기 💪</h2>
+
+            <p>
+                FitLog와 함께 건강한 운동 습관을 만들어보세요.
+            </p>
+
+            <div class="hero_buttons">
+
+                <button onclick="document.getElementById('exerciseInput').focus()">운동 추가</button>
+                <button onclick="location.href='./pages/board.html'">게시판 가기</button>
+
+            </div>
+
+        </section>        
+
+        <!-- 운동 목록 영역 -->
+        <section id="exerciseListSection">
+            <div class="dashboard_card">
+                <p>오늘 수행할 운동 목록</p>
+                <ul id="exerciseList"></ul>
+            </div>
+        </section>
+
+
+        <!-- 대쉬보드 영역 -->
+        <section id="dashboardSection">
+            <h2>대시보드</h2>
+
+            <div id="dashboardGrid">
+                <div class="dashboard_card">
+                    <img src="./images/free-icon-dumbell-2324705.png" class="dashboard_icon">
+                    <p>오늘 운동 종류 수</p>
+                    <span id="exerciseCount">0개</span>
+                </div>
+
+                <div class="dashboard_card">
+                    <img src="./images/free-icon-timer-clock-27133.png" class="dashboard_icon">
+                    <p>오늘 남은 운동 시간</p>
+                    <span id="todayWorkoutTime">0분</span>
+                </div>
+
+                <div class="dashboard_card">
+                    <img src="./images/free-icon-bulletin-board-12094191.png" class="dashboard_icon">
+                    <p>오늘 올라온 게시글 수</p>
+                    <span id="todayBoardCount">0개</span>
+                </div>
+
+            </div>
+        </section>
+        
+        <!-- 운동 목록 영역 -->
+        <section id="exerciseSection">
+            <h2>오늘 수행할 운동 추가</h2>
+
+            <!-- 운동 입력 영역 -->
+            <div id="input_group">
+                <input type="text" placeholder="운동입력 (예:스쿼트)" id="exerciseInput">
+                <input type="number" placeholder="시간(분)" id="exerciseTime">
+
+                <button onclick="addExercise()" id="addBtn">추가하기</button>
+            </div>
+        </section>
+
+        <!-- 완료된 운동 목록 -->
+        <section id="completedSection">
+            <h2>완료한 운동</h2>
+            <ul id="completedExerciseList"></ul>
+        </section>
+
+        <!-- 운동 게시판 영역 -->
+        <section id="boardSection">
+
+            <!-- 게시판 제목 영역 -->
+            <div id="board_title">
+                <h2>운동 게시판</h2>
+                <p>운동 기록을 공유해보세요.</p>
+            </div>
+            <!-- 게시판 이동 버튼 -->
+            <button onclick="location.href='./pages/board.html'">게시판 이동</button>
+
+        </section>
+
+        <!-- 헬스장 찾기 기능 영역 -->
+        <section id="mapSection">
+            <h2>헬스장 찾기</h2>            
+            <button onclick="location.href='./pages/gym.html'">내 집 근처 헬스장 찾으러 가보기</button>
+        </section>
+
+        <!-- 날씨 기반 운동 추천 기능 영역 -->
+        <section id="weatherSection">
+            <h2>날씨 기반 운동 추천</h2>
+            <button onclick="location.href='./pages/weather.html'">추천 받으러 가보기</button>
+        </section>
+
+    </main>
+
+    <!-- 하단 바 영역 -->
+    <nav id="bottom_bar">
+        <ul>
+            <li><a href="./index.html">홈</a></li>
+            <li><a href="./pages/board.html">게시판</a></li>
+            <li><a href="./pages/gym.html">헬스장</a></li>
+            <li><a href="./pages/weather.html">날씨 기반 운동 추천</a></li>
+            <li><a href="./pages/mypage.html">마이</a></li>
+        </ul>
+    </nav>
+
+</body>
+</html>

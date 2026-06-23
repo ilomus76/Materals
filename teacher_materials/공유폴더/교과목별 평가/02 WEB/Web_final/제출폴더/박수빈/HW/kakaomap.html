@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>독서공간 찾기</title>
+
+
+<link rel="stylesheet" href="./css/kakao.css">
+
+
+<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c071b0b104fc51f66f5ab2e95fd31a9a&libraries=services"></script>
+
+
+</head>
+
+
+<body>
+
+
+<header class="top-bar">
+
+<a href="hw.html" class="logo">
+YArrBook
+</a>
+
+
+<a href="hw.html" class="home-btn">
+메인으로
+</a>
+
+</header>
+
+
+
+<div class="container">
+
+
+<h1>독서공간 찾기</h1>
+
+
+<div class="search-box">
+
+<input id="keyword" value="도서관">
+
+
+<button onclick="searchPlaces()">
+검색
+</button>
+
+</div>
+
+
+
+<div id="map"></div>
+
+
+</div>
+
+
+<script src="./js/kakao.js"></script>
+
+
+</body>
+
+</html>

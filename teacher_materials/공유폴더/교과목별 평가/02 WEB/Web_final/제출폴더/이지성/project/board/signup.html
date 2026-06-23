@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+
+    <link rel="stylesheet" href="../css/signup.css">
+</head>
+<body>
+
+    <div class="main_div_wrap">
+
+        <div class="main_title">
+            <h2><a href="../index.html">MBCA</a><br>학습 문의 게시판</h2>
+            <p>수강학생들의<br> 학습 질문과 정보를 공유하는 공간</p>
+        </div>
+
+        <form class="signup_inputbox" action="../backend/signup.php" method="post" enctype="multipart/form-data" id="signupForm">
+            <input id="user_id" type="text" placeholder="아이디" name="user_id">
+            <input id="user_pw" type="password" placeholder="비밀번호" name="user_pw">
+            <input id="user_name" type="text" placeholder="이름" name="user_name">
+            <input id="nickname" type="text" placeholder="닉네임" name="nickname">
+            <input id="email" type="email" placeholder="이메일" name="email">
+            <input id="profile_img" type="file" accept="image/*" name="profile_img">
+
+            <div class="signup_btnbox">
+                <button id="btn_signup_page" type="submit">
+                가입하기
+                </button>
+                <a id="btn_cancel" href="./login.html">취소하기</a>
+            </div>
+        </form>
+        
+      
+
+    </div>
+
+    <script src="../js/signup.js"></script>
+
+</body>
+</html>

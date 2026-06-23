@@ -1,0 +1,561 @@
+/* ===================================================
+   [Part 1] 축제 퍼플 & 네온 핑크 테마 컬러 브랜딩 스킨
+   =================================================== */
+
+/* 1. 기본 스타일 초기화 및 공통 디자인 보정 */
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Malgun Gothic', sans-serif; 
+}
+body { 
+    background: #f0f2f8; /* 베이스 배경색 보정 */
+    color: #2d3748; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+}
+button { 
+    cursor: pointer; 
+    border: none; 
+    border-radius: 6px; 
+    font-weight: bold; 
+    transition: all 0.2s ease;
+}
+input[type="text"], input[type="password"], textarea { 
+    width: 100%; 
+    padding: 11px; 
+    margin-top: 6px; 
+    margin-bottom: 16px; 
+    border: 1px solid #cbd5e0; 
+    border-radius: 6px; 
+    background: #ffffff;
+    transition: border-color 0.2s;
+}
+input:focus, textarea:focus {
+    border-color: #6c5ce7; /* 포커스 시 퍼플 하이라이트 */
+    outline: none;
+}
+
+/* 2. 인증 독립 컨테이너 박스 (퍼플 그라데이션 포인트) */
+.auth-container { 
+    background: #ffffff; 
+    padding: 40px; 
+    border-radius: 16px; 
+    box-shadow: 0 10px 25px rgba(108, 92, 231, 0.1); 
+    width: 100%; 
+    max-width: 400px; 
+    display: block; 
+}
+.auth-container h2 { 
+    text-align: center; 
+    margin-bottom: 25px; 
+    color: #4a148c; /* 딥 퍼플 타이틀 */
+    font-weight: 800;
+}
+.auth-btn { 
+    width: 100%; 
+    padding: 13px; 
+    background: linear-gradient(135deg, #6c5ce7, #a855f7); /* 그라데이션 페스티벌 버튼 */
+    color: white; 
+    font-size: 16px; 
+    box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
+}
+.auth-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(108, 92, 231, 0.4);
+}
+.remember-me { 
+    display: flex; 
+    align-items: center; 
+    gap: 6px; 
+    margin-bottom: 16px; 
+    font-size: 14px; 
+    color: #4a5568;
+}
+.auth-footer { 
+    display: flex; 
+    justify-content: space-between; 
+    margin-top: 22px; 
+    font-size: 13px; 
+    color: #718096; 
+}
+.auth-footer span { cursor: pointer; }
+.auth-footer span:hover { 
+    text-decoration: underline; 
+    color: #6c5ce7; 
+}
+.form-desc { 
+    font-size: 13px; 
+    color: #6c5ce7; 
+    line-height: 1.4; 
+    margin-bottom: 16px; 
+    background: #f3f0ff; /* 연한 보라색 배경 정보창 */
+    padding: 12px; 
+    border-left: 4px solid #6c5ce7; 
+    border-radius: 0 6px 6px 0;
+}
+.find-result-box { 
+    margin-top: 15px; 
+    padding: 12px; 
+    background: #f3f0ff; 
+    border-radius: 6px; 
+    font-size: 14px; 
+    color: #4a148c; 
+    font-weight: bold; 
+    text-align: center; 
+    display: none; 
+    white-space: pre-line; 
+    border: 1px dashed #6c5ce7;
+}
+
+/* 3. 로그인 후 2분할 메인 레이아웃 및 딥퍼플 사이드바 스킨 */
+.main-container { 
+    display: none; 
+    width: 100vw; 
+    height: 100vh; 
+    grid-template-columns: 260px 1fr; 
+}
+.sidebar { 
+    background: #1b4b35; /* 콘서트 야간 감성의 초밀도 딥블루 퍼플 */
+    color: white; 
+    display: flex; 
+    flex-direction: column; 
+    overflow-y: auto; 
+}
+.sidebar-header { 
+    padding: 24px 20px; 
+    background: #110e2e; 
+    text-align: left; 
+    font-size: 20px; 
+    font-weight: 800; 
+    letter-spacing: 1px;
+    color: #f472b6; /* 활기찬 핑크 네온 포인트 마킹 */
+    border-bottom: 1px solid #1e1b4b;
+    position: relative; 
+}
+.logout-btn { 
+    position: absolute; 
+    right: 12px; 
+    top: 24px; 
+    background: #ff4757; 
+    color: white; 
+    padding: 4px 8px; 
+    font-size: 11px; 
+    border-radius: 4px;
+}
+
+/* 아코디언 메뉴 컬러 레이어 단초 조정 */
+.main-tab { 
+    padding: 16px 20px; 
+    background: #2e2a72; 
+    font-weight: bold; 
+    border-bottom: 1px solid #1e1b4b; 
+    cursor: pointer; 
+    font-size: 14px;
+    transition: background 0.2s;
+}
+.main-tab:hover { background: #3b368c; }
+
+.sub-tab-container { 
+    background: #110e2e; 
+    display: none; 
+}
+.sub-tab-container.active { 
+    display: block; 
+}
+.sub-tab { 
+    padding: 11px 32px; 
+    font-size: 13px; 
+    color: #a5b4fc; /* 은은한 연보라색 글씨 */
+    cursor: pointer; 
+    border-bottom: 1px solid #1e1b4b; 
+    transition: all 0.2s;
+}
+/* 월별 탭 마우스 호버 및 액티브 시 활기찬 네온 핑크 컬러 발탁 연동 */
+.sub-tab:hover, .sub-tab.active { 
+    background: #ec4899; /* 네온 핑크 셀렉션 */
+    color: white; 
+    font-weight: bold;
+    padding-left: 36px;
+}
+/* ===================================================
+   [Part 2] 우측 콘텐츠 스페이스, 갤러리 카드 격자 및 모달 팝업 스킨
+   =================================================== */
+
+/* 우측 게시판 콘텐츠 메인 스페이스 */
+.content-area { 
+    padding: 35px; 
+    overflow-y: auto; 
+    background: #f7fafc; 
+}
+.content-header { 
+    margin-bottom: 25px; 
+    border-bottom: 2px solid #e2e8f0; 
+    padding-bottom: 15px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+.content-header h2 {
+    color: #1a1c23;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+/* 📋 글형 / 🖼️ 갤러리형 보기 전환 라디오 토글 디자인 보정 */
+#viewToggleGroup {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+#viewToggleGroup input[type="radio"] {
+    accent-color: #ec4899; /* 라디오 버튼 서식을 네온 핑크로 일치 */
+}
+
+/* 게시판 표 테이블 (글형 모드) */
+.board-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    background: #ffffff; 
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+.board-table th, .board-table td { 
+    padding: 14px 12px; 
+    border-bottom: 1px solid #edf2f7; 
+    text-align: center; 
+}
+.board-table th { 
+    background: #f7fafc; 
+    color: #4a5568; 
+    font-weight: bold;
+}
+.board-table td { 
+    font-size: 13px; 
+    word-break: keep-all; 
+    color: #4a5568;
+}
+.board-table tr:hover {
+    background: #fafdff; /* 수평 행 호버 시 산뜻한 스카이 버퍼 입힘 */
+}
+.board-table td.title-td { 
+    text-align: left; 
+    cursor: pointer; 
+    color: #6c5ce7; /* 제목 링크를 딥 퍼플 색상으로 동기화 */
+    font-weight: 600;
+}
+.board-table td.title-td:hover { 
+    text-decoration: underline; 
+    color: #4834d4;
+}
+
+/* 우하단 기능 제어 단추 컴포넌트 */
+.btn-group { 
+    margin-top: 20px; 
+    display: flex; 
+    gap: 10px; 
+    justify-content: flex-end; 
+}
+.btn { 
+    padding: 10px 20px; 
+    color: white; 
+    font-size: 14px; 
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.btn-primary { 
+    background: #6c5ce7; /* 포인터 보라색 단추 */
+} 
+.btn-primary:hover { 
+    background: #5b4cc4; 
+}
+.btn-danger { 
+    background: #ff4757; 
+}  
+.btn-danger:hover { 
+    background: #e03846; 
+}
+.btn-secondary { 
+    background: #718096; 
+} 
+.btn-secondary:hover { 
+    background: #5a6578; 
+}
+
+/* 글 작성 및 쓰기 폼 보드 판넬 */
+.board-form-container { 
+    background: #ffffff; 
+    padding: 30px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02); 
+    display: none; 
+    border: 1px solid #e2e8f0;
+}
+.board-form-container label {
+    font-weight: bold;
+    color: #4a5568;
+    font-size: 14px;
+}
+.file-upload-area { 
+    background: #f7fafc; 
+    border: 2px dashed #cbd5e0; 
+    padding: 20px; 
+    margin-bottom: 15px; 
+    border-radius: 8px; 
+}
+.file-upload-area:hover {
+    border-color: #6c5ce7;
+}
+
+/* 다중 첨부파일 명단 리스트 취소 단추 */
+#fileUl li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+}
+.file-delete-btn {
+    background: #fff5f5;
+    color: #ff4757;
+    font-size: 11px;
+    padding: 3px 8px;
+    border: 1px solid #ffe3e3;
+    border-radius: 4px;
+}
+.file-delete-btn:hover {
+    background: #ffe3e3;
+    color: #d63031;
+}
+
+/* 다중 이미지 미리보기 격자 수용 레이아웃 */
+.image-preview-box { 
+    margin-top: 10px; 
+    width: 100%; 
+    background: #f8fafc; 
+    padding: 15px; 
+    border: 1px solid #e2e8f0; 
+    border-radius: 8px;
+    display: none; 
+}
+.preview-img-item {
+    position: relative;
+    width: 130px;
+    height: 100px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.preview-img-item img { 
+    width: 120px; 
+    height: 90px;
+    object-fit: cover; 
+    border-radius: 4px; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05); 
+    cursor: zoom-in;
+}
+
+/* 다중 축제 포스터 썸네일 마우스 호버 확대 애니메이션 */
+.preview-img-item img:hover { 
+    position: absolute;
+    width: 380px; 
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    z-index: 999;
+    top: -50px; 
+    border: 3px solid #ffffff;
+}
+
+/* 🖼️ 갤러리형 카드 모던 페스티벌 디자인 */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 25px;
+    margin-bottom: 10px;
+}
+.gallery-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+.gallery-card:hover {
+    transform: translateY(-6px); /* 카드 호버 시 위로 동적으로 통통 튀는 인터랙션 */
+    box-shadow: 0 12px 20px rgba(108, 92, 231, 0.15); /* 핑크퍼플 빔 잔영 처리 */
+}
+
+/* 카드 상단 대표 이미지 */
+.card-thumb {
+    width: 100%;
+    height: 150px;
+    background: #edf2f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card-thumb-empty {
+    font-size: 36px;
+    color: #a0aec0;
+}
+
+/* 카드 하단 메타 정보 단초 */
+.card-body {
+    padding: 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+}
+.card-title {
+    font-size: 15px;
+    font-weight: bold;
+    color: #1a1c23;
+    line-height: 1.4;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.card-info {
+    font-size: 12px;
+    color: #718096;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #edf2f7;
+    padding-top: 10px;
+}
+.card-tag {
+    font-size: 11px;
+    font-weight: bold;
+    color: #6c5ce7;
+    background: #f3f0ff;
+    padding: 3px 8px;
+    border-radius: 6px;
+    align-self: flex-start;
+}
+
+/* 비밀글 보호 선택 옵션 */
+.secret-option { 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    margin-bottom: 15px; 
+    background: #f7fafc; 
+    padding: 12px; 
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+}
+.secret-pwd-input { 
+    width: 150px !important; 
+    margin: 0 !important; 
+    display: none; 
+}
+
+/* 💬 확장형 댓글 및 커뮤니티 목록 */
+#commentUl li {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 12px;
+    border-bottom: 1px solid #edf2f7;
+    font-size: 13px;
+    line-height: 1.4;
+}
+#commentUl li:last-child {
+    border-bottom: none;
+}
+.cmt-meta {
+    font-weight: bold;
+    color: #2d3748;
+    margin-right: 8px;
+    display: inline-block;
+}
+.cmt-date {
+    font-size: 11px;
+    color: #a0aec0;
+    margin-left: 8px;
+}
+.cmt-delete-btn {
+    background: none;
+    color: #ff4757;
+    font-size: 11px;
+    cursor: pointer;
+    border: none;
+    padding: 0 4px;
+}
+.cmt-delete-btn:hover {
+    text-decoration: underline;
+}
+
+/* 🌐 공공 Open API 상세 보기 팝업 모달 스킨 스타일 */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(17, 14, 46, 0.6); /* 딥퍼플과 매칭되는 어두운 투명 레이어 */
+    backdrop-filter: blur(3px);
+    z-index: 1000;
+    display: none; 
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: #ffffff;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 16px;
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    animation: modalSlideUp 0.3s ease-out;
+}
+.modal-header {
+    background: linear-gradient(135deg, #1e1b4b, #2e2a72); /* 모달 헤더 딥퍼플 융합 */
+    color: white;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal-title { font-size: 16px; font-weight: bold; }
+.modal-close-btn { background: none; color: #a5b4fc; font-size: 20px; cursor: pointer; }
+.modal-close-btn:hover { color: #fff; }
+.modal-body { padding: 24px; }
+.modal-info-table p { font-size: 13px; color: #4a5568; margin-bottom: 10px; line-height: 1.5; }
+
+/* 모달 기대평 리스트 */
+#modalCmtUl li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 6px;
+    border-bottom: 1px solid #edf2f7;
+    font-size: 12px;
+}
+
+@keyframes modalSlideUp {
+    from { transform: translateY(35px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}

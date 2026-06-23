@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글 작성</title>
+
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/write.css">
+    <script src="../js/write.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <!-- 앱 로고 영역 -->
+        <div id="app_logo">
+            <h1>FitLog</h1>
+        </div>
+    </header>
+    <main class="container">
+        <h2>게시글 작성</h2>
+
+        <input id="titleInput" placeholder="제목">
+
+        <!-- 게시글 작성 영역 -->
+        <textarea id="recordInput" cols="50" rows="5" placeholder="(예:오늘 어느 부위가 잘됐다거나 다른 사람들에게 추천하는 운동 등등..)"></textarea>
+
+        <!-- 기록, 뒤로가기 버튼 -->
+        <div class="button_area">
+            <button class="back_btn" onclick="location.href='./board.html'">이전</button>
+            <button class="submit_btn" onclick="record()">기록 등록</button>
+        </div>
+
+    </main>
+
+    <!-- 하단 바 영역 -->
+    <nav id="bottom_bar">
+        <ul>
+            <li><a href="../index.html">홈</a></li>
+            <li><a href="./board.html">게시판</a></li>
+            <li><a href="./gym.html">헬스장</a></li>
+            <li><a href="./weather.html">날씨 기반 운동 추천</a></li>
+            <li><a href="./mypage.html">마이</a></li>
+        </ul>
+    </nav>
+    
+</body>
+</html>

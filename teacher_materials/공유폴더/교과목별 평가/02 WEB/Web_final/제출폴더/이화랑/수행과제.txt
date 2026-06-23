@@ -1,0 +1,47 @@
+nr2026.dothome.co.kr/NAESAEGGI
+
+[임의의 계정]
+ID : popopo
+pw : qwert12345
+
+
+6월 16일 화요일
+
+index.html 화면 구성 및 디자인
+mypet.html 화면 구성 및 디자인
+store.html 화면 구성 및 디자인
+
+
+6월 17일 수요일
+/more/meeting.html 화면 구성 
+더미데이터를 통해 디자인
+/more/write.html 작성 및 db에 저장하게끔 구축
+db에 저장한 값을 meeting.html에서 출력할수 있게끔 가져올수 있게 구축
+
+카카오맵 api를 이용하여 '공원'을 검색한 값을 나오게 /more/map.html 구성
+
+
+6월 18일 목요일
+
+login.html과 regi.html을 만들어 로그인과 회원가입 화면 구축
+regi2.html으로 회원가입후 펫의 기본정보 (사진 및 묘종 저장) 저장 및 db에 연결
+
+sessionStorage 를 알게되어 login의 id와 meeting의 id를 동일시 시킬수 있게끔 변경
+
+meeting.html에 로그인한 본인 id와 동일한 id만 수정/삭제 버튼이 나오게 수정
+
+mypet.html에 기본구성으로 회원가입시 입력했던 묘종을 thecatapi라는 openapi를 이용해 기본정보를 출력하게 설정 (추후에 번역 api를 이용하여 번역하게 하고싶음)
+
+
+6월 19일 금요일
+meeting.html에 수정버튼이 눌리면 그 글이 edit.html로 이동하고 db에 저장되어있는 값을 가져와 출력해주게 변경
+edit.html에서 수정한 내용을 db에 변경하여 저장하는 구조 구축
+delete.html을 만들어 db에 저장된 줄 데이터를 삭제하는 구조 구축
+login.html에서 input창에서 엔터를 눌렀을때 id->pw로 넘어가기 / pw->버튼누르기 이벤트 추가
+
+
+6월 20일
+myinfo.html에 비밀번호 변경을 하면 기존 db의 비밀번호를 업데이트 하는 구조 구축
+탈퇴버튼을 누르면 db를 삭제하는 구조 구축
+
+

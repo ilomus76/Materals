@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화리뷰보드 - 리뷰게시판</title>
+
+    <link rel="stylesheet" href="../../css/ReviewPage/review_board.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="../../html/HomePage/home_list.html">
+                    <img src="../../image/top_logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="client_menu" id="client_menu">
+                <a href="../../html/LogInPage/login.html">로그인</a>
+                <a href="../../html/JoinPage/join.html">회원가입</a>
+            </div>
+        </header>
+        <div class="second_header">
+            <div id="contents_menu">
+                <a href="../../html/IntroPage/movie_intro.html">영화소개</a>
+                <a href="./review_board.html">영화리뷰</a>
+                <a href="../MapPage/map.html">영화관 찾기</a> 
+            </div>
+            <div class="movie_search">
+                <input
+                    id="movie_keyword"
+                    class="searchbox"
+                    type="text"
+                    placeholder="영화제목 입력">
+                <button class="search_btn" onclick="searchMovie()">검색</button>
+            </div> 
+        </div>
+
+        <div class="title">
+            <h2>리뷰게시판</h2>
+            <p>영화를 자유롭게 리뷰해보세요.</p>
+        </div>
+
+        <div class="board_list_wrap">
+            <div class="board_movie_search">
+                <input id="keyword" class="searchbox" type="text" placeholder="영화명/제목/본문 입력">
+                <button class="search_btn" onclick="searchReview()">검색</button>
+                <a href="./review_write.html">글쓰기</a>
+            </div>
+            <table class="board_list">
+                <tr class="column_title">
+                    <th class="col_no">번호</th>
+                    <th class="col_movie">영화명</th>
+                    <th class="col_title">제목</th>
+                    <th class="col_writer">작성자</th>
+                    <th class="col_date">작성일</th>
+                    <th class="col_hits">조회</th>
+                </tr>
+                
+                <tbody id="board_list"></tbody>
+
+            </table>
+
+            <div class="board_pagination">
+                <a href="" class="btn">&lt;&lt;</a>
+                <a href="" class="btn">&lt;</a>
+                <a href="" class="btn selected">1</a> <!-- btn 과 selected 라는 2개의 클래스명을 사용-->
+                <a href="" class="btn">2</a>
+                <a href="" class="btn">3</a>
+                <a href="" class="btn">4</a>
+                <a href="" class="btn">5</a>
+                <a href="" class="btn">&gt;</a>
+                <a href="" class="btn">&gt;&gt;</a>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/review_board.js"></script>
+    <script src="../../js/common.js"></script>
+</body>
+</html>

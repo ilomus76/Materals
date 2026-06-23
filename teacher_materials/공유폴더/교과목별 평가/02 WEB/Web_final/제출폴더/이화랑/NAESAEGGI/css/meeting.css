@@ -1,0 +1,153 @@
+@import url('./common.css');
+
+body{
+    display: flex;
+    justify-content: center;
+
+}
+.wrap{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    border-radius: 20px;
+    width: 60vw;
+    height: 98vh;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.wrap::-webkit-scrollbar{
+    width: 10px;
+}
+
+.btn{
+    width: 35vw;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #ffffff;
+    padding-bottom: 30px;
+    
+}
+
+.btn a, .btn button{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-family: 'font1',serif;
+    margin-top: 30px;
+    width: 100%;
+    height: 80px;
+    background-color: orange;
+    border-radius: 20px;
+    border: 2px solid #999999;
+    cursor: pointer;
+}
+
+
+.btn img{
+    width: 50px;
+    margin-right: 10px;
+}
+
+.box{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1.3fr 0.5fr 2.2fr;
+    gap: 5px;
+    border: 1px solid #999999;
+    border-radius: 20px;
+    width: 35vw;
+    margin: 10px 0;
+    min-height: 200px;
+    background-color: oldlace;
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.box >div{
+    display: flex;
+    align-items: center;
+}
+
+.box .title{
+    grid-column: 1/4;
+    justify-content: center;
+    border-bottom: 1px solid gray;
+}
+
+.box .writer{
+    grid-column: 1/1;
+    justify-content: center;
+}
+
+.box .date{
+    grid-column: 3/4;
+    justify-content: flex-end;
+    padding-right: 25px;
+}
+
+.box .msg{
+    grid-column: 1/4;
+    justify-content: center;
+    min-height: 100px;
+    align-items: flex-start;
+    padding-top: 20px;
+}
+
+.inner_box input, .inner_box textarea{
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    resize: none;
+    font-size: 1rem;
+    outline: none;
+}
+
+.title{
+    font-size: 1.6rem;
+}
+
+.writer{
+    font-size: 1.1rem;
+}
+
+.msg{
+    font-size: 1rem;
+}
+
+.date{
+    font-size: .9rem;
+    color: red;
+}
+
+.title input{
+    font-size: 1.2rem;
+}
+
+.inner_box span{
+    color: black;
+}
+
+.inner_box textarea::-webkit-scrollbar{
+    width: 5px;
+}
+
+.btn_group {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+}
+
+.btn_group button {
+    padding: 5px 15px;
+    margin-left: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: pink;
+    border-radius: 30px;
+}

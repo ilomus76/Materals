@@ -1,0 +1,188 @@
+<div class="profile-page">
+
+<div class="profile-header">
+
+<img src="./img/지창욱.jpeg" class="profile-img">
+
+<div class="profile-info">
+
+<h2>지창욱</h2>
+
+<h3>📚 감성 독서 기록가</h3>
+
+<p>
+책 속 문장과 감정을 섬세하게 기록하는
+YArrBook 인기 독서 기록가입니다.
+</p>
+
+<p>
+📖 좋아하는 분야 : 소설, 자기계발
+</p>
+
+<p>
+따뜻한 리뷰와 깊은 감상으로 많은 공감을 받고 있습니다.
+</p>
+
+
+<div class="stats">
+
+<div>
+<strong>96</strong>
+<span>독서 기록</span>
+</div>
+
+<div>
+<strong>5.8k</strong>
+<span>좋아요</span>
+</div>
+
+<div>
+<strong>31</strong>
+<span>읽은 책</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="record-section">
+
+<h2>📖 인기 독서 기록</h2>
+
+
+<div class="record-card">
+
+<h3>어린 왕자</h3>
+
+<p>
+어른이 되어 다시 읽을 때 더 많은 의미가 느껴지는 책입니다.
+</p>
+
+<button onclick="like(this)">
+❤️ 1,820
+</button>
+
+</div>
+
+
+
+<div class="record-card">
+
+<h3>데미안</h3>
+
+<p>
+나 자신을 찾는 과정에 대해 생각하게 만든 책입니다.
+</p>
+
+<button onclick="like(this)">
+❤️ 1,550
+</button>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<style>
+
+.profile-page{
+width:90%;
+max-width:1000px;
+margin:50px auto;
+}
+
+.profile-header{
+display:flex;
+align-items:center;
+gap:50px;
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 5px 20px #ddd;
+}
+
+.profile-img{
+width:200px;
+height:200px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.profile-info{
+flex:1;
+}
+
+.profile-info h2{
+font-size:38px;
+}
+
+.profile-info h3{
+color:#b8860b;
+}
+
+.profile-info p{
+line-height:1.8;
+color:#555;
+}
+
+.stats{
+display:flex;
+gap:40px;
+margin-top:20px;
+}
+
+.stats div{
+text-align:center;
+}
+
+.stats strong{
+font-size:24px;
+}
+
+.record-card{
+background:#fafafa;
+padding:25px;
+margin:20px 0;
+border-radius:15px;
+position:relative;
+}
+
+.record-card button{
+position:absolute;
+right:20px;
+top:20px;
+border:0;
+background:white;
+padding:10px;
+border-radius:20px;
+}
+
+</style>
+
+
+<script>
+
+function like(btn){
+
+let n =
+Number(
+btn.innerText
+.replace("❤️","")
+.trim()
+.replace(",","")
+);
+
+n++;
+
+btn.innerText="❤️ "+n.toLocaleString();
+
+}
+
+</script>

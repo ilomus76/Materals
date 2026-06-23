@@ -1,0 +1,147 @@
+/* =========================
+   WRITE PAGE
+========================= */
+
+main.container{
+    padding-top:20px;
+}
+
+main h2{
+    color:#6d28d9;
+    margin-bottom:20px;
+}
+
+/* =========================
+   FORM CARD
+========================= */
+
+main.container{
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.08);
+
+    margin-top:20px;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+#titleInput{
+    width:100%;
+
+    padding:15px;
+
+    border:1px solid #ddd;
+
+    border-radius:12px;
+
+    font-size:1rem;
+
+    margin-bottom:20px;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+#titleInput:focus{
+    border-color:#7c3aed;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+#recordInput{
+    width:100%;
+
+    min-height:250px;
+
+    padding:15px;
+
+    border:1px solid #ddd;
+
+    border-radius:12px;
+
+    resize:vertical;
+
+    font-size:1rem;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+#recordInput:focus{
+    border-color:#7c3aed;
+}
+
+/* =========================
+   BUTTON AREA
+========================= */
+
+#record_button button:hover{
+    background:#6d28d9;
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+button[onclick="location.href='./board.html'"]{
+
+    width:100%;
+
+    border:none;
+
+    background:#ede9fe;
+
+    color:#6d28d9;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    margin-top:15px;
+
+    cursor:pointer;
+
+    font-weight:600;
+}
+
+.button_area{
+    display:flex;
+    gap:10px;
+
+    margin-top:20px;
+}
+
+.back_btn{
+    flex:1;
+}
+
+.submit_btn{
+    flex:2;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    #recordInput{
+        min-height:200px;
+    }
+
+    .button_area{
+        flex-direction:column;
+    }
+
+}

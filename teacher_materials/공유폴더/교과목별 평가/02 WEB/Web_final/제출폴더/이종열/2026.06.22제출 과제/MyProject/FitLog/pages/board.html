@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLog Board</title>
+
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/board.css">
+    <script src="../js/board.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <!-- 앱 로고 영역 -->
+        <div id="app_logo">
+            <h1>FitLog</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>운동 게시판</h2>
+
+        <!-- 글 작성 버튼 -->
+        <div id="write_btn">
+            <button onclick="goWritePage()">글 작성</button>
+        </div>
+
+        <!-- 검색 부분 -->
+        <div class="search_group">
+            <input id="searchBoard" placeholder="게시글 검색">
+            <button onclick="searchPosts()"><img src="../images/free-icon-search-5636698.png" alt="검색"></button>
+        </div>
+
+        <!-- 게시글 영역 -->
+        <div id="postList"></div>
+
+    </main>
+
+    <!-- 하단 바 영역 -->
+    <nav id="bottom_bar">
+        <ul>
+            <li><a href="../index.html">홈</a></li>
+            <li><a href="./board.html">게시판</a></li>
+            <li><a href="./gym.html">헬스장</a></li>
+            <li><a href="./weather.html">날씨 기반 운동 추천</a></li>
+            <li><a href="./mypage.html">마이</a></li>
+        </ul>
+    </nav>
+    
+</body>
+</html>

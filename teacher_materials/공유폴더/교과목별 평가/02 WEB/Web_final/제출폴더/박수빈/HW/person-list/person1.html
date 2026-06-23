@@ -1,0 +1,349 @@
+<div class="profile-page">
+
+
+    <div class="profile-header">
+
+
+        <img 
+        src="./img/최승현.jpeg"
+        class="profile-img"
+        alt="최승현">
+
+
+        <div class="profile-info">
+
+
+            <h2>최승현</h2>
+
+
+            <h3>
+                👑 이달의 독서 기록가
+            </h3>
+
+
+            <p>
+                책을 통해 다양한 이야기를 기록하는
+                YArrBook 인기 독서 기록가입니다.
+            </p>
+
+
+            <p>
+                📚 좋아하는 분야 : 소설, 에세이
+            </p>
+
+
+            <p>
+                ✨ 꾸준한 독서와 따뜻한 감상으로
+                많은 독자들에게 공감을 받고 있습니다.
+            </p>
+
+
+
+            <div class="stats">
+
+
+                <div>
+                    <strong>128</strong>
+                    <span>독서 기록</span>
+                </div>
+
+
+                <div>
+                    <strong>11.5k</strong>
+                    <span>좋아요</span>
+                </div>
+
+
+                <div>
+                    <strong>42</strong>
+                    <span>읽은 책</span>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <div class="record-section">
+
+
+        <h2>📖 인기 독서 기록</h2>
+
+
+
+        <div class="record-card">
+
+
+            <h3>데미안</h3>
+
+            <p>
+                "나 자신을 찾아가는 과정이
+                인상 깊었던 책입니다."
+            </p>
+
+
+            <button onclick="like(this)">
+                ❤️ 3,421
+            </button>
+
+
+        </div>
+
+
+
+
+        <div class="record-card">
+
+
+            <h3>불편한 편의점</h3>
+
+            <p>
+                "작은 친절이 사람을 변화시킬 수 있다는
+                점이 좋았습니다."
+            </p>
+
+
+            <button onclick="like(this)">
+                ❤️ 2,890
+            </button>
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+<style>
+
+
+.profile-page{
+
+    width:90%;
+    max-width:1000px;
+
+    margin:50px auto;
+
+}
+
+
+
+.profile-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:50px;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,0.12);
+
+}
+
+
+
+
+
+.profile-img{
+
+    width:200px;
+
+    height:200px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+
+
+
+
+.profile-info{
+
+    flex:1;
+
+}
+
+
+
+.profile-info h2{
+
+    font-size:38px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+.profile-info h3{
+
+    color:#b8860b;
+
+}
+
+
+
+.profile-info p{
+
+    color:#555;
+
+    line-height:1.8;
+
+}
+
+
+
+
+
+.stats{
+
+    display:flex;
+
+    gap:40px;
+
+    margin-top:25px;
+
+}
+
+
+
+.stats div{
+
+    display:flex;
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+
+
+.stats strong{
+
+    font-size:24px;
+
+}
+
+
+
+
+
+.record-section{
+
+    margin-top:50px;
+
+}
+
+
+
+
+.record-card{
+
+    position:relative;
+
+    background:#fafafa;
+
+    padding:25px;
+
+    margin:20px 0;
+
+    border-radius:15px;
+
+}
+
+
+
+.record-card p{
+
+    color:#555;
+
+}
+
+
+
+.record-card button{
+
+    position:absolute;
+
+    right:25px;
+
+    top:25px;
+
+    border:none;
+
+    background:white;
+
+    padding:10px 15px;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+}
+
+
+
+.record-card button:hover{
+
+    background:#ffe5e5;
+
+}
+
+
+</style>
+
+
+
+
+
+<script>
+
+
+function like(btn){
+
+
+    let num =
+    btn.innerText
+    .replace("❤️","")
+    .replace(",","")
+    .trim();
+
+
+    num = Number(num)+1;
+
+
+    btn.innerText =
+    "❤️ " + num.toLocaleString();
+
+
+}
+
+
+</script>

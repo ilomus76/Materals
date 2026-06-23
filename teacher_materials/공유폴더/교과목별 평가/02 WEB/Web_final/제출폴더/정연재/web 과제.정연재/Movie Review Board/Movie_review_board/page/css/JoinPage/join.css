@@ -1,0 +1,225 @@
+@import url(../common.css);
+
+.error_msg{
+    width: 90%;
+    height: 18px;
+    margin: 2px auto;
+    color: red;
+    font-size: 0.8rem;
+    text-align: left;
+}
+
+.join_btn_wrap{
+    margin: 10% auto;
+    width: 40%;
+    border: 2px solid #222222;
+    padding: 10px;
+}
+
+.join_btn_wrap .join_logo img{
+    width: 200px;
+    height: 80px;
+    margin-bottom: 30px;
+}
+
+/* 아이디 */
+.join_btn_wrap .user_id_wrap{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 10px auto;
+}
+
+.join_btn_wrap .user_id_wrap input{
+    box-sizing: border-box;
+    width: 75%;
+    font-size: 1.2rem;
+    color: white;
+    padding: 5px;
+    background-color: black;
+    border: 2px solid #222222;
+    border-right: none;
+}
+
+.join_btn_wrap .user_id_wrap div{
+    box-sizing: border-box;
+    width: 25%;
+    background-color: black;
+    color: #757373;
+    cursor: pointer;
+}
+
+.join_btn_wrap .user_id_wrap button{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    font-size: 1.2rem;
+    background-color: red;
+    border: 2px solid #222222;
+    color: white;
+    cursor: pointer;
+}
+
+/* 비밀번호 */
+
+.join_btn_wrap .user_pw_wrap{
+    width: 90%;
+    margin: 10px auto;
+}
+
+.join_btn_wrap .user_pw_wrap input{
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 1.2rem;
+    color: white;
+    padding: 5px;
+    background-color: black;
+    border: 2px solid #222222;
+}
+
+/* 비밀번호 확인 */
+
+.join_btn_wrap .user_pw_check_wrap{
+    width: 90%;
+    margin: 10px auto;
+}
+
+.join_btn_wrap .user_pw_check_wrap input{
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 1.2rem;
+    color: white;
+    padding: 5px;
+    background-color: black;
+    border: 2px solid #222222;
+}
+
+/* 이메일 */
+
+.join_btn_wrap .user_email_wrap{
+    width: 90%;
+    margin: 10px auto;
+}
+
+.join_btn_wrap .user_email_wrap input{
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 1.2rem;
+    color: white;
+    padding: 5px;
+    background-color: black;
+    border: 2px solid #222222;
+}
+
+/* 생년월일 */
+
+.join_btn_wrap .user_birth_wrap{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 10px auto;
+    background-color: black;
+}
+
+.join_btn_wrap .user_birth_wrap .birth{
+    box-sizing: border-box;
+    width: 20%;
+    border: 2px solid #222222;
+}
+
+.join_btn_wrap .user_birth_wrap .birth p{
+    font-size: 1.2rem;
+    color: #757373;
+}
+
+.join_btn_wrap .user_birth_wrap .user_birth{
+    box-sizing: border-box;
+    width: 80%;
+    font-size: 1.2rem;
+    color: #757373;
+}
+
+.join_btn_wrap .user_birth_wrap .user_birth input{
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    font-size: 1.2rem;
+    color: #757373;
+    background-color: black;
+    border: 2px solid #222222;
+    border-left: none;
+    padding: 5px;
+
+}
+
+.join_btn_wrap .user_birth_wrap .user_birth input::-webkit-calendar-picker-indicator{
+    filter: invert(1);
+}
+
+/* 성별 */
+
+.join_btn_wrap .user_gender_wrap{
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    margin: 10px auto;
+}
+
+.user_gender_wrap input{
+    display: none;
+}
+
+.male_box, .female_box{
+    flex: 1;
+}
+
+.user_gender_wrap label{
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #757373;
+    cursor: pointer;
+    border: 2px solid #222222;
+}
+
+#male:checked + label, #female:checked + label, .user_gender_wrap label:hover{
+    background-color: red;
+    color: white;
+}
+
+/* 닉네임 */
+
+.join_btn_wrap .nickname_wrap{
+    width: 90%;
+    margin: 10px auto;
+}
+
+.join_btn_wrap .nickname_wrap input{
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 1.2rem;
+    color: white;
+    padding: 5px;
+    background-color: black;
+    border: 2px solid #222222;
+}
+
+/* 회원가입 */
+
+.join_btn_wrap .final_check_wrap{
+    width: 90%;
+    margin: 20px auto;
+}
+
+.join_btn_wrap .final_check_wrap button{
+    box-sizing: border-box;
+    width: 100%;
+    background-color: red;
+    border: 2px solid #222222;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+}

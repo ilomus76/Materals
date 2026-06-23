@@ -1,0 +1,95 @@
+@import url(./common.css);
+
+body{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.6),
+            rgba(0,0,0,0.6)
+        ),
+        url(../source/index_img.png)
+        center/cover no-repeat;
+}
+
+.main_wrap{
+    width:100%;
+    padding:3rem;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    text-align:center;
+}
+
+.main_wrap h2{
+    font-size:2.8rem;
+    margin-bottom:1rem;
+    color: white;
+}
+
+.main_wrap p{
+    font-size:1.3rem;
+    color: white;
+}
+
+.main_wrap a{
+    width:100%;
+    max-width:30rem;
+
+    padding:1.2rem;
+    margin-bottom:1rem;
+
+    border-radius:0.5rem;
+
+    font-size:1.6rem;
+    text-align:center;
+}
+
+#start{
+    margin-top: 2rem;
+    background:#2563eb;
+    color:white;
+}
+
+#signup{
+    background:white;
+    color:#2563eb;
+}
+span {
+    font-size: 4.5rem;
+}
+.main_wrap span{
+    font-size:4.5rem;
+}
+
+@media screen and (max-width:480px){
+
+    body{
+        align-items:flex-start;
+        padding-top:8rem;
+        background-position:65% center;
+
+    }
+
+    .main_wrap{
+        padding:2rem;
+    }
+
+    .main_wrap h2{
+        font-size:2.4rem;
+    }
+
+    .main_wrap span{
+        font-size:3.6rem;
+    }
+
+    .main_wrap a{
+        font-size:1.5rem;
+    }
+}

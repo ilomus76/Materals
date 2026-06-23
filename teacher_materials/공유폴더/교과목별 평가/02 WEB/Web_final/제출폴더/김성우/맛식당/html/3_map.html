@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맛식당!3</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/3_map.css">
+    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=8ca0785f755a41e7a594e16fbc7654f9&libraries=services"></script>
+    <script src="../js/3_map.js" defer></script>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+
+        <form id="search_bar">
+            <div class="search_input_box">
+                <input id="keyword" type="text" placeholder="맛식당 이름 검색">
+                <button type="submit">
+                    <img src="../source/img/arrow.png" alt="search">
+                </button>
+            </div>
+
+            <ul id="search_result"></ul>
+        </form>
+
+        </header>
+
+
+
+        <main>
+            <div id="map"></div>
+
+            <button id="upload" onclick="location.href='./2_2_upload.html'"> 
+                <span class="plus">+</span>
+                <span class="upload-text">맛식당 등록</span> 
+            </button>
+
+        </main>
+
+
+        <footer>
+            <div id="tool_bar">
+            <button id="back_btn" onclick="location.href='./1_main.html'"> ❮ </button>
+
+            <img id="logo" src="../source/img/logo_b.png" alt="logo">
+
+            <button id="profile_btn" onclick="location.href='./4_personal_info.html'" ><img src="../source/img/profile_default.png" alt="profile"></button>
+
+            </div>
+
+
+
+        </footer>
+
+    </div>
+    
+</body>
+</html>

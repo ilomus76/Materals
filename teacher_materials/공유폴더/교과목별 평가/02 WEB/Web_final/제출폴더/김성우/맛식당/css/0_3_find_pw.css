@@ -1,0 +1,147 @@
+html, body{
+    background-color: #FEF9F4;
+}
+
+#wrap{
+    width: 100%;
+    max-width: 800px;
+    min-height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #FEF9F4;
+}
+
+header{
+    display: grid;
+    grid-template-columns: 70px 1fr 70px;
+    align-items: center;
+    padding: 20px 30px;
+}
+
+header button{
+    justify-self: start;
+    border: none;
+    background: none;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+header img{
+    justify-self: center;
+    width: 6.5rem;
+    height: 2.5rem;
+    object-fit: contain;
+}
+
+main{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 70px 45px 0;
+}
+
+main h1{
+    font-size: 2rem;
+    margin-bottom: 55px;
+}
+
+main form{
+    width: 100%;
+    display: flex;
+    gap: 12px;
+}
+
+main form input{
+    flex: 1;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    padding: 20px 24px;
+    box-shadow: 2px 1px 10px #dddddd;
+    background-color: white;
+    outline: none;
+}
+
+main form input:focus{
+    box-shadow: 0 0 0 3px #FFC107 inset, 2px 1px 10px #dddddd;
+}
+
+main form button{
+    width: 170px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: #FFC107;
+    padding: 0 20px;
+    box-shadow: 2px 1px 10px #dddddd;
+    cursor: pointer;
+}
+
+main form button:hover{
+    filter: brightness(0.96);
+}
+
+#find_pw{
+    width: 100%;
+    margin-top: 45px;
+    min-height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#find_pw p{
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 2px 1px 10px #dddddd;
+    padding: 28px 25px;
+    font-size: 1.35rem;
+    line-height: 1.6;
+}
+
+#find_pw strong{
+    color: #FFC107;
+    font-size: 1.6rem;
+}
+
+@media screen and (max-width: 600px){
+    #wrap{
+        max-width: none;
+        width: 100%;
+    }
+
+    header{
+        padding: 18px 24px;
+    }
+
+    main{
+        padding: 45px 24px 0;
+    }
+
+    main h1{
+        font-size: 1.7rem;
+        margin-bottom: 35px;
+    }
+
+    main form{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    main form input,
+    main form button{
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    main form button{
+        height: 58px;
+    }
+}

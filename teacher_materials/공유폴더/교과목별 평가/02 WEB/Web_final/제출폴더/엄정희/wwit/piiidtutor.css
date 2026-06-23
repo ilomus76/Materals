@@ -1,0 +1,351 @@
+
+/*헤더 영역*/
+.header{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/*인기 검색어 버튼*/
+.hot-keyword{
+    display: inline-block;
+    position: relative;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 1rem;
+    
+    
+    
+}
+.hot-list{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 120px;
+    z-index: 10;
+}
+
+.hot-keyword.open .hot-list{
+    display: block;
+}
+
+/*이미지 버튼*/
+.menu{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-direction: row;
+    top: 20px;
+    
+    
+}
+.item{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    cursor: pointer;
+    
+}
+.item img{
+    width: 30px;
+    height: 30px;
+}
+.item span{
+    font-size: 12px;
+    margin-top: 5px;
+    align-items: center;
+}
+
+
+/*메인화면*/
+.img{
+    background-image: url(./image/images2.jpg);
+    border: 1px solid black;
+    object-fit: cover;
+}
+
+.aa{
+    
+    width: 150px;
+    height: 30px;
+    color: blue;
+    font-size: 25px;
+    text-align: left;
+    
+}
+.search-box{
+    
+
+    width: 500px;
+    height: 20px;
+    border: 2px solid gray;
+    display: flex;
+    flex-direction: row;
+    border-radius: 50px;
+    padding: 10px;
+    background-color: gainsboro;
+    flex-shrink: 0;
+
+
+
+    
+}
+
+#in1{
+    flex-grow: 1;
+    height: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    border: none;
+    background-color: gainsboro;
+    font-size: 20px;
+    
+    
+
+}
+
+
+/* 메인 버튼 */
+.bbb{
+    width: 80px;
+    height: 60px;
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    cursor: pointer;
+}
+.ccc{
+    width:  80px;
+    height: 60px;
+    position: absolute;
+    top: 17%;
+    right: 50px;
+    cursor: pointer;
+
+}
+
+/* 메뉴 스타일 */
+#nav{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+#nav ul{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#nav ul li{
+    margin: 0 15px;
+}
+
+#nav ul li a{
+    color: black;
+    font-size: 25px;
+    text-decoration: none;
+}
+/* 비디오 크기 조절 */
+.vd{
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 50px;
+    
+}
+
+/* 비디오 위에 글자 넣기 */
+.video-text{
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    color: white;
+    font-size: 65px;
+    font-weight: bold;
+    
+}
+/* 상품 배치하기 */
+.main{
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+
+.icon-text{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 30px;    
+    
+}
+
+.icon{
+    width: 30px;
+    height: 30px;
+}
+.main p{
+    font-size: 30px;
+    margin-top: -15px; 
+}
+/* 패키지 사진 추가 및 내용 설명 */
+.mi{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-bottom: 10rem;
+    
+}
+.wrap{
+    display: flex;
+    width: 350px;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 25px;
+    flex: 1;
+    min-width: 250px;
+}
+.wrap:hover{
+    transform: scale(1.06);
+    cursor: pointer;
+}
+
+.im{
+    width: 100%;
+    height: 350px;
+    border-radius: 30px;
+}
+
+/* 경주 사진 */
+.gyeongju{
+    position: relative;
+}
+.gyeongju img{
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+    display: block;
+}
+.gyeongju p{
+    position: absolute;
+    top: 1%;
+    left: 5%;
+    color: white;
+    font-size: 65px;
+    font-weight: bold;
+}
+/* 패키지 최저가 설명글 */
+.best{
+    display: inline-block;
+    font-size: 30px;
+    margin-left: 200px;
+}
+
+/* 패키지 최저가 가격 비교 */
+.main2{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: space-between;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: 4rem;
+}
+
+.package{
+    width: 350PX;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    padding: 10PX;
+    border-radius: 25px;
+    align-items: center;
+    flex: 1;
+    min-width: 250px;
+}
+.tour{
+    width: 100%;
+    height: 350px;
+    border-radius: 30px;
+    
+}
+.in1{
+    width: 300px;
+    text-align: center; 
+}
+
+.in1 h1{
+    font-size: 24px;
+}
+
+.in1 h3{
+    font-size: 16px;
+    color: rgb(191, 191, 219);
+}
+.in1 p{
+    font-size: 15px;
+    box-sizing: border-box;
+}
+/* 마침표 */
+.bg{
+    background:  rgb(243, 221, 188);
+}
+.container {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: stretch;
+    margin-top: 8rem;
+}
+
+/* 3등분 */
+.left,
+.middle,
+.right {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
+
+/* 구분선은 border로 처리 */
+.left {
+    border-right: 1px solid #ccc;
+}
+
+.middle {
+    border-right: 1px solid #ccc;
+}
+
+/* 간격 */
+h3 {
+    margin-bottom: 15px;
+}
+
+.left .phone,
+.middle .item,
+.right p {
+    margin: 6px 0;
+    text-align: left;
+}

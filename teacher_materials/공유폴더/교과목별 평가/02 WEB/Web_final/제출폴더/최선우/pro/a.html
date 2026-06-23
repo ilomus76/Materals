@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디즈니월드</title>
+    <style>
+        #wrap{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            height: 100vh;
+        }
+        #logo{
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid black;
+            margin-bottom: 10px;
+        }
+        #login {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+            width: 340px;
+        }
+
+        
+        .login1, #login2 {
+            flex: 1;                 
+            height: 48px;            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            white-space: nowrap;
+            
+            text-decoration: none !important; 
+            border: none;
+            outline: none;
+            
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            box-sizing: border-box;
+            
+            background-color: #004fb8; 
+            color: #ffffff;
+        }
+
+        
+        
+
+
+
+
+    </style>
+</head>
+<body>
+    <form action="login.php" method="POST" id="wrap">
+    <div>
+        <img id="logo" src="https://tjsdn7124.dothome.co.kr/Data/disney.png" alt="disney">
+    </div>
+    
+    <div class="input-box">
+        ID <input type="text" id="loginid" name="loginid" required>
+    </div>
+    <div class="input-box">
+        PW <input type="password" id="loginpw" name="loginpw" required>
+    </div>
+    
+    <div id="login">
+        <a href="./b.html" class="login1">회원가입</a>
+        <button id="login2" type="submit">로그인</button>    
+    </div>
+    </form>
+    
+</body>
+</html>

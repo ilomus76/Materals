@@ -1,0 +1,46 @@
+@import url('common.css');
+
+.wrap{
+    text-align: center;
+}
+
+.title{
+    font-size: 4rem;
+    margin: 30px;
+    font-family: 'font1', serif;
+    color: red;
+}
+
+.logo img{
+    width: 250px;
+    border: 2px solid gray;
+    border-radius: 50%;
+    margin: 20px;
+}
+
+.in_id, .in_pw{
+    font-family: 'font4',serif;
+    font-size: 1.8rem;
+}
+
+.btn button{
+    background-color: blue;
+    color: white;
+    border: none;
+    width: 200px;
+    height: 60px;
+    border-radius: 20px;
+    margin: 20px;
+    font-size: 1.5rem;
+    font-family: 'font1',serif;
+    cursor: pointer;
+}
+
+.regi{
+    font-size: 0.8rem;
+}
+
+.regi a{
+    color: blue;
+    text-decoration: underline;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>헬스장 찾기</title>
+
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/gym.css">
+    
+    <!-- 지도 기능 -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ec4486c2900facaaeedb1086ccb2c02d&libraries=services"></script>
+    <script src="../js/gym.js" defer></script>
+</head>
+<body>
+    <!-- 제목 + 홈 버튼 -->
+    <header>
+        <!-- 앱 로고 영역 -->
+        <div id="app_logo">
+            <h1>FitLog</h1>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- 헬스장 검색 -->
+        <section id="gymSearchSection">
+            <div class="gym_container">
+
+                <h2>근처 헬스장 찾기</h2>
+
+                <div class="search_group">
+                    <input id="searchInput" placeholder="주소 입력(예:서울시 관악구 신림로..)">
+                    <button id="searchBtn" onclick="searchGym()"><img src="../images/free-icon-search-5636698.png" alt="검색"></button>
+                </div>
+                
+
+            </div>
+        </section>
+
+        <section id="mapSection">
+            <div id="map"></div>
+        </section>
+
+        <!-- 북마크 기능 영역 -->
+        <section id="gymListSection">
+            <div id="gymList"></div>
+            <button onclick="bookmarkGym()">북마크</button>
+        </section>
+
+    </main>
+
+    <!-- 하단 바 영역 -->
+    <nav id="bottom_bar">
+        <ul>
+            <li><a href="../index.html">홈</a></li>
+            <li><a href="./board.html">게시판</a></li>
+            <li><a href="./gym.html">헬스장</a></li>
+            <li><a href="./weather.html">날씨 기반 운동 추천</a></li>
+            <li><a href="./mypage.html">마이</a></li>
+        </ul>
+    </nav>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+main {
+    grid-area: cc; display: flex; justify-content: center; gap: 6px; padding: 10px 0; background-color: #ffffff; 
+}
+main a {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    width: 50%; height: 100%; text-decoration: none;
+}
+main a img {width: 100%; object-fit: cover; display: block; border-radius: 12px;}
+.profile_info{display: flex; flex-direction: column; align-items: center; margin-top: 20px; text-align: center;}
+.profile_info .nickname{font-size: 1.2rem; font-weight: 800; color: blueviolet; margin-bottom: 2px;}
+.profile_info .height,.job{font-size: 1rem; font-weight: 550; color: #7a97a6;}
+
+main a:hover {
+    transform: scale(1.3) translateY(-10px); box-shadow: 0 10px 25px rgba(143, 170, 191, 0.4); z-index: 100; 
+    background: #ffffff; border-radius: 12px; padding: 5px; transition: all 0.3s ease;
+}
+aside a, nav a {text-decoration: none;}
+footer {
+    background-color: #ebf3f9; color: #8faabf;  font-size: 0.8rem; font-weight: 400;
+    padding: 12px 20px; border: none; display: flex; justify-content: space-between !important; align-items: center;
+}
+.back-btn {
+    color: #5b7e96; text-decoration: none; font-weight: 600; padding: 4px 8px; border-radius: 6px;
+    background-color: #ffffff; box-shadow: 0 2px 4px rgba(163, 197, 222, 0.2); transition: all 0.2s ease;
+}
+.back-btn:hover {background-color: #72b3e6; color: #ffffff; transform: translateX(-2px);}

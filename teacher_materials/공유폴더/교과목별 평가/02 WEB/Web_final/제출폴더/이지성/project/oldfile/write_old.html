@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글쓰기</title>
+    <link rel="stylesheet" href="../css/write.css">
+</head>
+<body>
+    <div class="main_wrap">
+
+        <header class="main_header">
+            <h1>MBCA 학습 문의 게시판</h1>
+
+            <nav class="main_nav">
+                <a href="./mypage.html">MY</a>
+                <a href="../index.html">로그아웃</a>
+            </nav>
+        </header>
+
+        <form action="../backend/write.php" class="write_form" method="post" enctype="multipart/form-data">
+
+            <div class="write_form_top">
+                <h2>글쓰기</h2>
+                <a href="./board.html">목록으로</a>
+            </div>
+
+            <div class="form_group">
+                <p>카테고리</p>
+                <select name="category">
+                    <option value="">선택</option>
+                    <option value="html_css">HTML/CSS</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="php">PHP</option>
+                    <option value="db">DB</option>
+                    <option value="git">Git</option>
+                    <option value="etc">기타</option>
+                </select>
+            </div>
+
+            <div class="form_group">
+                <p>제목</p>
+                <input type="text" placeholder="제목을 입력하세요" name="title">
+            </div>
+
+            <div class="form_group">
+                <p>내용</p>
+                <textarea placeholder="내용을 입력하세요" name="content"></textarea>
+            </div>
+
+            <div class="form_group">
+                <p>첨부이미지</p>
+                <input type="file" name="board_img">
+            </div>
+
+            <div class="write_btnbox">
+                <a href="./board.html">취소</a>
+                <button type="submit">저장</button>
+            </div>
+
+        </form>
+
+    </div>
+</body>
+</html>

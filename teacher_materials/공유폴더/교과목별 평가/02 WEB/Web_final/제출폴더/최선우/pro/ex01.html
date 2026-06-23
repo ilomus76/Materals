@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실시간 현재 위치 날씨</title>
+    <style>
+        body { font-family: 'Malgun Gothic', sans-serif; background: #eef2f7; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .weather-card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; width: 320px; }
+        .location { font-size: 1.1rem; color: #4a5568; font-weight: bold; margin-bottom: 5px; }
+        .coords { font-size: 0.85rem; color: #a0aec0; margin-bottom: 20px; }
+        .icon { font-size: 4.5rem; margin: 15px 0; }
+        .temp { font-size: 3.5rem; font-weight: bold; color: #2d3748; }
+        .desc { font-size: 1.2rem; color: #718096; margin-top: 10px; font-weight: 500; }
+        .debug-msg { font-size: 0.8rem; color: #718096; margin-top: 15px; word-break: break-all; }
+    </style>
+</head>
+<body>
+
+<div class="weather-card">
+    <div class="location" id="loc-text">📍 내 위치 탐색 중...</div>
+    <div class="coords" id="coords-text">GPS 계산 중...</div>
+    <div class="icon" id="weather-icon">⏳</div>
+    <div class="temp" id="weather-temp">--°C</div>
+    <div class="desc" id="weather-desc">위치 권한을 허용해 주세요.</div>
+    <div class="debug-msg" id="debug-text"></div>
+</div>
+
+<script>
+    const SERVICE_KEY = "208df624cebb1f6697ab3a0728368f9f557d75e21d828cf9cd6896b4cc18bdf3"; 
+
+    // 기상청 공식 위경도 -> 격자 변환 함수 (파라미터 순서 명확화: v1=위도, v2=경도)
+    function dfs_xy_conv(v1, v2) {
+        const RE = 6371.00877; const GRID = 5.0; const SLAT1 = 30.0; const SLAT2 = 60.0;
+        const OLON = 126.0; const OLAT = 38.0; const XO = 43; const YO = 136;
+        const DEGRAD = Math.PI / 180.0;
+        const re = RE / GRID; const slat1 = SLAT1 * DEGRAD; const slat2 = SLAT2 * DEGRAD;
+        const olon = OLON * DEGRAD; const olat = OLAT * DEGRAD;
+        let sn = Math.tan(Math.PI * 0.25 + slat2 * 0.5) / Math.tan(Math.PI * 0.25 + slat1 * 0.5);
+        sn = Math.log(Math.cos(slat1) / Math.cos(slat2)) / Math.log(sn);
+        let sf = Math.tan(Math.PI * 0.25 + slat1 * 0.5); sf = (Math.pow(sf, sn) * Math.cos(slat1)) / sn;
+        let ro = Math.tan(Math.PI * 0.25 + olat * 0.5); ro = (re * sf) / Math.pow(ro, sn);
+        let rs = {}; let ra = Math.tan(Math.PI * 0.25 + (v1) * DEGRAD); ra = (re * sf) / Math.pow(ra, sn);
+        let theta = v2 * DEGRAD - olon; if (theta > Math.PI) theta -= 2.0 * Math.PI; if (theta < -Math.PI) theta += 2.0 * Math.PI; theta *= sn;
+        rs['x'] = Math.floor(ra * Math.sin(theta) + XO + 0.5); rs['y'] = Math.floor(ro - ra * Math.cos(theta) + YO + 0.5);
+        return rs;
+    }
+
+    // 날짜 및 시간 계산 (40분 차감 지연 안전장치)
+    function getBaseDateTime() {
+        const now = new Date();
+        const safeTime = new Date(now.getTime() - (40 * 60 * 1000));
+        
+        const yyyymmdd = safeTime.getFullYear() + 
+                         String(safeTime.getMonth() + 1).padStart(2, '0') + 
+                         String(safeTime.getDate()).padStart(2, '0');
+        
+        const hours = safeTime.getHours();
+        let baseTime = "0200";
+        
+        if (hours >= 2 && hours < 5) baseTime = "0200";
+        else if (hours >= 5 && hours < 8) baseTime = "0500";
+        else if (hours >= 8 && hours < 11) baseTime = "0800";
+        else if (hours >= 11 && hours < 14) baseTime = "1100";
+        else if (hours >= 14 && hours < 17) baseTime = "1400";
+        else if (hours >= 17 && hours < 20) baseTime = "1700";
+        else if (hours >= 20 && hours < 23) baseTime = "2000";
+        else if (hours >= 23 || hours < 2) baseTime = "2300";
+
+        return { date: yyyymmdd, time: baseTime };
+    }
+
+    // 날씨 API 호출 및 UI 반영
+    async function getWeather(nx, ny) {
+        const url = "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst";
+        const { date, time } = getBaseDateTime();
+
+        document.getElementById('debug-text').innerText = `요청 조건: ${date} / ${time} 발표`;
+
+        const queryParams = 
+            `serviceKey=${encodeURIComponent(SERVICE_KEY)}` +
+            `&pageNo=1` +
+            `&numOfRows=60` +
+            `&dataType=JSON` +
+            `&base_date=${date}` +
+            `&base_time=${time}` +
+            `&nx=${nx}` +
+            `&ny=${ny}`;
+
+        try {
+            const response = await fetch(`${url}?${queryParams}`);
+            const data = await response.json();
+            
+            if (!data.response || data.response.header.resultCode !== "00") {
+                document.getElementById('weather-desc').innerText = "데이터 요청 오류";
+                return;
+            }
+
+            const items = data.response.body.items.item;
+            let tmp = "", sky = "", pty = "";
+
+            items.forEach(item => {
+                if(item.category === 'TMP') tmp = item.fcstValue;
+                if(item.category === 'SKY') sky = item.fcstValue;
+                if(item.category === 'PTY') pty = item.fcstValue;
+            });
+
+            if (tmp === "-999" || !tmp) {
+                document.getElementById('weather-desc').innerText = "예보 데이터 공백 (-999)";
+                return;
+            }
+
+            let icon = "☀️"; let desc = "맑음";
+            if (pty !== "0") {
+                if (pty === "1" || pty === "4") { icon = "🌧️"; desc = "비"; }
+                else if (pty === "2") { icon = "🌨️"; desc = "비/눈"; }
+                else if (pty === "3") { icon = "❄️"; desc = "눈"; }
+            } else {
+                if (sky === "3") { icon = "⛅"; desc = "구름많음"; }
+                else if (sky === "4") { icon = "☁️"; desc = "흐림"; }
+            }
+
+            document.getElementById('weather-temp').innerText = `${tmp}°C`;
+            document.getElementById('weather-icon').innerText = icon;
+            document.getElementById('weather-desc').innerText = desc;
+
+        } catch (error) {
+            console.error(error);
+            document.getElementById('weather-desc').innerText = "네트워크 연결 실패";
+        }
+    }
+
+    // GPS 위치 수집 및 안전 검증 로직
+    function init() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+                const lat = position.coords.latitude;  // 위도 (예: 37.566)
+                const lon = position.coords.longitude; // 경도 (예: 126.978)
+                
+                // 💡 첫 번째 인자에 위도(lat), 두 번째 인자에 경도(lon)를 정확히 명시해 넘깁니다.
+                const grid = dfs_xy_conv(lat, lon);
+                
+                // 💡 안전장치: 변환된 격자가 한반도 범위(X: 30~140, Y: 60~140)를 벗어나면 서울 표준 좌표로 리다이렉트
+                if (grid.x < 30 || grid.x > 140 || grid.y < 60 || grid.y > 140) {
+                    document.getElementById('coords-text').innerText = `GPS 오차 우회 -> 서울 격자 좌표 매핑 (60, 127)`;
+                    document.getElementById('loc-text').innerText = "📍 서울 (기본값)";
+                    getWeather(60, 127);
+                } else {
+                    document.getElementById('coords-text').innerText = `내 위치 격자 좌표: nx=${grid.x}, ny=${grid.y}`;
+                    document.getElementById('loc-text').innerText = "📍 현재 위치 날씨";
+                    getWeather(grid.x, grid.y);
+                }
+            }, (error) => {
+                console.error(error);
+                document.getElementById('coords-text').innerText = "위치 허용 거부 -> 서울 격자 좌표 매핑 (60, 127)";
+                document.getElementById('loc-text').innerText = "📍 서울 (기본값)";
+                getWeather(60, 127);
+            });
+        } else {
+            document.getElementById('weather-desc').innerText = "GPS 미지원 브라우저입니다.";
+        }
+    }
+
+    init();
+</script>
+</body>
+</html>

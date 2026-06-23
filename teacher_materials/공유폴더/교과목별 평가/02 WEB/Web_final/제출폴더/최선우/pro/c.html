@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인페이지</title>
+    <link rel="stylesheet" href="./a.css">
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3ac65fd265f7c838e2c12f406121f727"></script>
+    <script src="./kakao.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+    <script src="./main.js" defer></script>
+</head>
+<body>
+    <div>
+        <img id="profile" src="./default_profile.png" alt="프로필">
+        <div id="intro">
+            <div id="intro1">나의 소개글</div>
+            <div id="intro2">자신을 소개해보세요</div>
+            <textarea id="intro3"></textarea>
+            <button id="btn-edit" onclick="enableEdit()">수정</button>
+            <button id="btn-save" onclick="saveEdit()">저장</button>
+        </div>
+    </div>
+
+    <div id="main">
+        <div id="menu">
+            <div class="menubar" onclick="switchTab(0)">지도</div>
+            <div class="menubar" onclick="switchTab(1)">게시글</div>
+            <div class="menubar" onclick="switchTab(2)">실시간 채팅</div>
+        </div>
+
+        <div id="content">
+            <div id="map" style="width: 1200px; height:900px;"></div>
+            
+            <div id="post">
+                <div class="board_header">
+                    <h2>게시글 관리</h2>
+                    <button id="btn-write-trigger" onclick="openModal('writeModal')">새 글 등록</button>
+                </div>
+
+                <table class="board_list">
+                    <thead>
+                        <tr class="column_title">
+                            <th class="col_no">번호</th>
+                            <th class="col_title">제목</th>
+                            <th class="col_writer">글쓴이</th>
+                            <th class="col_date">작성일</th>
+                            <th class="col_hits">조회</th>
+                            <th class="col_manage">관리</th>
+                        </tr>
+                    </thead>
+                    <tbody id="board_content">
+                    </tbody>
+                </table>
+
+                <div class="board_pagination">
+                    <a href="#" class="btn">&lt;&lt;</a>
+                    <a href="#" class="btn">&lt;</a>
+                    <a href="#" class="btn selected">1</a>
+                    <a href="#" class="btn">2</a>
+                    <a href="#" class="btn">3</a>
+                    <a href="#" class="btn">&gt;</a>
+                    <a href="#" class="btn">&gt;&gt;</a>
+                </div>
+
+                <div id="writeModal" class="modal-overlay">
+                    <div class="modal-content">
+                        <h3>새 게시글 등록</h3>
+                        <input type="text" id="write_title" placeholder="제목을 입력하세요">
+                        <input type="text" id="write_writer" placeholder="작성자 로그인 ID" readonly style="background-color: #f0f0f0;">
+                        <textarea id="write_content" placeholder="내용을 입력하세요"></textarea>
+                        <div class="modal-buttons">
+                            <button onclick="submitWrite()">등록하기</button>
+                            <button onclick="closeModal('writeModal')">취소</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="viewModal" class="modal-overlay">
+                    <div class="modal-content">
+                        <h3 id="view_title">게시글 제목</h3>
+                        <div>
+                            작성자: <span id="view_writer"></span> | 작성일: <span id="view_date"></span>
+                        </div>
+                        <div id="view_content" style="margin-top:15px; min-height:100px; white-space:pre-wrap;">
+                            게시글 본문 내용이 들어갑니다.
+                        </div>
+                        <div class="modal-buttons">
+                            <button onclick="closeModal('viewModal'); loadBoardList();">닫기</button> </div>
+                    </div>
+                </div>
+
+                <div id="editModal" class="modal-overlay">
+                    <div class="modal-content">
+                        <h3>게시글 수정</h3>
+                        <input type="hidden" id="edit_no"> 
+                        <input type="text" id="edit_title" placeholder="수정할 제목">
+                        <textarea id="edit_content" placeholder="수정할 내용"></textarea>
+                        <div class="modal-buttons">
+                            <button onclick="submitEdit()">수정 완료</button>
+                            <button onclick="closeModal('editModal')">취소</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="live">
+                <div id="chat-container">
+                    <div id="chat-messages"></div>
+                    <div id="chat-input-area">
+                        <input type="text" id="chat-input" placeholder="메시지를 입력하세요..." onkeydown="if(event.keyCode==13) sendChatMessage()">
+                        <button id="btn-send" onclick="sendChatMessage()">전송</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+</body>
+</html>
+    

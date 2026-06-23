@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맛식당!_2</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/0_2_join.css?v6212">
+    <script src="../js/0_2_join.js" defer></script>
+</head>
+<body>
+    <div id="wrap">
+
+        <header>
+            <button onclick="location.href='./0_login.html'"> ❮ </button>
+
+            <img src="../source/img/logo_b.png" alt="logo_b">
+        </header>
+
+        <form action="../php/0_2_join.php" method="post" enctype="multipart/form-data">
+            <main>
+                <p>회원가입</p>
+
+                <img src="../source/img/profile_default.png" alt="프로필 사진" id="profile_img">
+                <input id="in1" name="profile_img" type="file" accept="image/*">
+
+                <div class="join">
+                    <input type="text" name="user_id" placeholder="아이디/닉네임">
+                    <input type="password" name="user_pw" placeholder="비밀번호">
+                </div>
+
+                <div class="confirm">
+                    <button type="submit">회원가입</button>
+                </div>
+            </main>
+        </form>
+
+    </div>
+    
+</body>
+</html>

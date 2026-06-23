@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBCA 학습 문의 게시판</title>
+    <link rel="stylesheet" href="../css/board.css">
+</head>
+<body>
+
+    <div class="main_wrap">
+
+        <header class="main_header">
+            <h1>MBCA 학습 문의 게시판</h1>
+
+            <nav class="main_nav">
+                <a href="./mypage.html">MY</a>
+                <a href="../index.html">로그아웃</a>
+            </nav>
+        </header>
+
+        <section class="intro_box">
+            <h2>학습 중 막힌 부분을 질문해보세요.</h2>
+            <p>HTML, CSS, JavaScript, PHP, DB, Git 관련 질문을 공유할 수 있습니다.</p>
+            <a href="./write.html" class="write_btn">글쓰기</a>
+        </section>
+
+        <section class="category_box">
+            <button>전체</button>
+            <button>HTML/CSS</button>
+            <button>JavaScript</button>
+            <button>PHP</button>
+            <button>DB</button>
+            <button>Git</button>
+            <button>기타</button>
+        </section>
+
+        <section class="search_box">
+            <select>
+                <option>제목</option>
+                <option>작성자</option>
+                <option>카테고리</option>
+            </select>
+
+            <input type="text" placeholder="검색어를 입력하세요">
+
+            <button>검색</button>
+        </section>
+
+        <section class="board_area">
+            <h2>등록된 질문</h2>
+
+            <ul class="board_list">
+                <li>
+                    <a href="./view.html">
+                        <span class="category">JavaScript</span>
+                        <strong>더미데이터.</strong>
+                        <span class="status waiting">답변대기</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./view.html">
+                        <span class="category">PHP</span>
+                        <strong>더미데이터</strong>
+                        <span class="status done">해결완료</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./view.html">
+                        <span class="category">CSS</span>
+                        <strong>더미데이터.</strong>
+                        <span class="status waiting">답변대기</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+@import url('../css/common.css');
+body{
+    display: flex;
+    justify-content: center;
+}
+.wrap{
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3rem;
+    width: 50vw;
+}
+
+.title{
+    font-size: 5rem;
+    color: red;
+    font-family: 'font2',monospace;
+}
+.store{
+    display: flex;
+    font-family: 'font1',monospace;
+    cursor: pointer;
+    border: 1px solid blue;
+    border-radius: 10px;
+    margin: 10px 0;
+    align-items: center;
+    min-width: 300px;
+    min-height: 70px;
+    
+}
+
+.store img{
+    
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    margin: 0 15px;
+}

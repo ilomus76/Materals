@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맛식당!2_1</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/2_1_content.css">
+</head>
+<body>
+
+    <div id="wrap">
+        <header>
+            <button id="back_btn" onclick="history.back()"> ❮ </button>
+
+            <img id="logo" src="../source/img/logo_b.png" alt="logo">
+
+            <button id="profile_btn" onclick="location.href='./4_personal_info.html'" ><img src="../source/img/profile_default.png" alt="profile"></button>
+        </header>
+
+        <main>
+            <div id="content">
+                <img src="../source/food/food1.jpg" alt="food_img">
+                <div id="content-text">
+                    <h1>제육볶음 정식</h1>
+                    <h4>서울밥집 신림점</h4>
+                    <div id="reaction">
+                        <img src="../source/img/heart.png" alt="heart">
+                        <p>31</p>
+                        <img src="../source/img/views.png" alt="views">
+                        <p>681</p>
+                    </div>
+                    <span>이 식당, 이런 점이 맛식당!</span>
+                    <h2>"밥이 무한리필이 된다고?!"</h2>
+                </div>
+                <div id="buttons">
+                    <button id="edit_btn" onclick="location.href='./2_3_edit.html'">수정하기</button>
+                    <button onclick="location.href='./3_map.html'">지도에서 보기</button>
+                </div>
+            </div>
+            <!-- 다 이제 데이터 받아서 변동 있게 만들어야.. 아이고 -->
+        </main>
+
+        <div id="comments">
+            <div id="comment_top">
+                <strong>나도 한줄평</strong>
+                <p>3</p> <!-- 아래 달리는 댓글에 따라 수 변경되도록 -->
+            </div>
+            <div class="comment">
+                <button onclick="location.href='./4_personal_info.html'"><img src="../source/img/profile_default.png" alt="profile_img"></button>
+                <p>nick</p>
+                <!-- 각각 프로필사진과 닉네임이 뜨도록.. / 이거 누르면 개인화면으로 연동..? -->
+                <p>이 집 순두부찌개도 맛있던데!</p>
+            </div>
+            <div class="comment">
+                <button onclick="location.href='./4_personal_info.html'"><img src="../source/img/profile_default.png" alt="profile_img"></button>
+                <p>sam</p>
+                <!-- 각각 프로필사진과 닉네임이 뜨도록.. / 이거 누르면 개인화면으로 연동..? -->
+                <p>Hello World!</p>
+            </div>
+            <div class="comment">
+                <button onclick="location.href='./4_personal_info.html'"><img src="../source/img/profile_default.png" alt="profile_img"></button>
+                <p>robin</p>
+                <!-- 각각 프로필사진과 닉네임이 뜨도록.. / 이거 누르면 개인화면으로 연동..? -->
+                <p>배트맨 조수 걔 아닙니다.</p>
+            </div>
+
+        </div>
+
+        <div id="write_text">
+            <input type="text" placeholder="나의 한줄평을 입력해 주세요!">
+            <button onclick="">등록</button>
+        </div>
+
+
+    </div>
+    
+</body>
+</html>

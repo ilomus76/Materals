@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화리뷰사이트 - 리뷰 작성</title>
+
+    <link rel="stylesheet" href="../../css/ReviewPage/review_write.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="../../html/HomePage/home_list.html">
+                    <img src="../../image/top_logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="client_menu" id="client_menu">
+                <a href="../../html/LogInPage/login.html">로그인</a>
+                <a href="../../html/JoinPage/join.html">회원가입</a>
+            </div>
+        </header>
+        <div class="second_header">
+            <div id="contents_menu">
+                <a href="../../html/IntroPage/movie_intro.html">영화소개</a>
+                <a href="./review_board.html">영화리뷰</a>
+                <a href="../MapPage/map.html">영화관 찾기</a> 
+            </div>
+            <div class="movie_search">
+                <input
+                    id="movie_keyword"
+                    class="searchbox"
+                    type="text"
+                    placeholder="영화제목 입력">
+                <button class="search_btn" onclick="searchMovie()">검색</button>
+            </div> 
+        </div>
+
+        <div class="title">
+            <h2>리뷰게시판 - 리뷰작성</h2>
+            <p>리뷰를 작성해보세요</p>
+        </div>
+        <div class="write_wrap">
+            <div class="title">
+                <div class="col_label">제목</div>
+                <div class="col_input"><input id="review_title" type="text" placeholder="제목을 입력하세요"></div>
+            </div>
+            <div class="movie_title_wrap">
+                <div class="movie_title">
+                    <div class="col_label">영화명</div>
+                    <div class="col_input"><input id="movie_title" type="text" placeholder="영화명을 입력하세요"></div>
+                </div>
+            </div>
+            <div class="content">
+                <textarea id="review_content" name="msg" placeholder="내용을 입력하세요"></textarea>
+            </div>
+
+            <div class="btn_wrap">
+                <button type="button" onclick="writeReview()">저장</button>
+                <a href="./review_board.html">취소</a>
+            </div>  
+        </div>
+    </div>
+
+    <script src="../../js/review_write.js"></script>
+    <script src="../../js/common.js"></script>
+</body>
+</html>

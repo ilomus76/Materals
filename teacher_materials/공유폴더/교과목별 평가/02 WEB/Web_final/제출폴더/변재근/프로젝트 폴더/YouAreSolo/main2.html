@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>너는솔로 - Solo Escape</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+
+        #logo {flex: 2;  display: flex;  align-items: center;  justify-content: center;}
+        #logo img {max-height: 140px;  width: auto;  object-fit: contain;}
+        body {
+            background-color: #d9edf7; font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            color: #2c3e50; margin: 0; padding: 0;
+        }
+        h3 {text-align: center;  font-size: 1.4rem; font-weight: 700; color: #3a8bcd; margin: 25px 0 10px 0; letter-spacing: -0.5px;}
+        hr {border: 0; height: 1px; background: linear-gradient(to right, transparent, #bedaf3, transparent); margin-bottom: 20px;}
+
+        #wrap {
+            display: grid;
+            grid-template-areas: 
+                'aa aa aa aa'
+                'bb cc cc dd'
+                'ee ee ee ee';
+            grid-template-columns: 1fr 2.2fr 1fr;  grid-gap: 12px; 
+            background-color: #d9edf7;  max-width: 450px; width: 100%; margin: 0 auto; padding: 0 16px 40px 16px;      
+            box-sizing: border-box;
+        }
+        header, nav, main, aside, footer {
+            background: #f4f9fc; border: 1px solid #e1eef6; border-radius: 16px; 
+            box-shadow: 0 4px 12px rgba(163, 197, 222, 0.15); padding: 15px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.9rem; font-weight: 600; color: #5b7e96; transition: all 0.3s ease;
+        }
+        header:hover, nav:hover, main:hover, aside:hover, footer:hover {
+            transform: translateY(-2px); box-shadow: 0 6px 16px rgba(114, 175, 222, 0.25); border-color: #bad3eb;
+        }
+        header {
+            grid-area: aa;  background: linear-gradient(135deg, #9dd1f7 0%, #72b3e6 100%); color: #f4f9fc;
+            font-size: 1.3rem; font-weight: 700; padding: 25px 15px; border: none; border-radius: 20px;
+        }
+        header p { margin: 0; }
+        nav {grid-area: bb; min-height: 220px; background-color: #f4f9fc;}
+        aside {grid-area: dd;  min-height: 220px;  background-color: #f9fbfd;}
+        main {grid-area: cc; display: flex; justify-content: center; gap: 8px; padding: 10px; background-color: #f4f9fc;}
+        main img {
+            width: 48%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 12px; border: 1px solid #f0f6fa;
+        }
+        footer {
+            grid-area: ee;  background-color: #ebf3f9;  color: #8faabf;  font-size: 0.8rem;  font-weight: 400;
+            padding: 12px; border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="logo"><img src="./boys/logo.png" alt="logo"></div>    
+    <hr>    
+    <div id="wrap">
+        <header><p>두 분 중 가장 이상형에 가까운 분을<br>선택하세요!</p></header>
+        <nav><a href="https://jack.dothome.co.kr/UAS/robby.html">to Robby</a></nav>
+        <main>
+            <a href="https://jack.dothome.co.kr/UAS/choiceL.html">
+                <img src="https://jack.dothome.co.kr/UAS/boys/YeongSuk1.png" alt="woman1">
+                <div class="profile_info">
+                    <span class="nickname">영숙</span>
+                    <span class="height">168cm</span>
+                    <span class="job">의사</span>
+                </div>
+            </a>
+            <a href="https://jack.dothome.co.kr/UAS/choiceR.html">
+                <img src="https://jack.dothome.co.kr/UAS/boys/JeongSuk1.png" alt="woman2">
+                <div class="profile_info">
+                    <span class="nickname">정숙</span>
+                    <span class="height">172cm</span>
+                    <span class="job">회계사</span>
+                </div>
+            </a>
+        </main>
+        <aside><a href="https://jack.dothome.co.kr/UAS/mypage.php">My Page</a></aside>
+        <footer>
+            <a href="javascript:history.back();" class="back-btn">← 뒤로가기</a>
+            <span>information</span>
+        </footer>
+    </div>    
+</body>
+</html>

@@ -1,0 +1,106 @@
+@import url(../common.css);
+
+.board_list_wrap{
+    width: 100%;
+    margin: 100px auto;
+}
+
+.board_list{
+    width: 90%;
+    margin: 10px auto;
+    border-top: 2px solid #222222;
+    border-bottom:  2px solid #222222;
+    border-collapse: collapse;
+}
+
+.board_list tr{
+    border-bottom: 1px solid #222222;
+}
+
+.board_list th, td{
+    padding: 1rem 0rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.board_list td.col_title{
+    text-align: left;
+}
+
+.col_no{width: 5%;}
+.col_movie{width: 20%;}
+.col_title{width: 45%; text-align: left}
+.col_writer{width: 10%;}
+.col_date{width: 15%;}
+.col_hits{width: 5%;}
+
+.board_pagination{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.btn{
+    display: inline-block;
+    width: 2rem;
+    padding: 5px;
+    border: 1px solid #222222;
+    font-size: 1.2rem;
+}
+.board_movie_search{
+    display: flex;
+    height: 2rem;
+}
+
+.board_list_wrap .board_movie_search{
+    justify-content: right;
+    margin-right: 5%;
+}
+
+.board_movie_search .searchbox{
+    background-color: black;
+    /* border: 2px solid #222222; */
+    width: 200px;
+    color: white;
+}
+
+.board_list_wrap .board_movie_search a{
+    font-size: 1rem;
+    margin-bottom: 1px;
+    text-align: center;
+    box-sizing: border-box;
+    height: 100%;
+    width: 3.5rem;
+    background-color: black;
+    border: 2px solid #222222;
+    border-radius: 5%;
+    color: #eeeeee;
+    padding-top: 3px;
+    margin-left: 1px;
+}
+
+.board_list_wrap .board_movie_search .search_btn{
+    font-size: 1rem;
+    margin-bottom: 1px;
+    text-align: center;
+    box-sizing: border-box;
+    height: 100%;
+    width: 3rem;
+    background-color: black;
+    border: 2px solid #222222;
+    border-radius: 5%;
+    color: #eeeeee;
+    padding-bottom: 1px;
+    margin-left: 1px;
+}
+
+@media screen and (max-width: 768px){
+
+    .board_list_wrap{
+        overflow-x: auto;
+    }
+
+    .board_list{
+        min-width: 700px;
+    }
+
+}

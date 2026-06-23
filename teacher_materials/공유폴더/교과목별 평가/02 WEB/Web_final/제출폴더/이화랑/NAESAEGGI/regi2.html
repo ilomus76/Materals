@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내새끼 정보 입력</title>
+
+    <link rel="stylesheet" href="./css/regi2.css">
+
+    <script src="./js/regi2.js"></script>
+
+</head>
+<body>
+    <div class="wrap">
+        <form>
+            <div class="title">내새끼 정보</div>
+            <div class="in_image">
+                <img src="./image/nopet.png" alt="missing" id="preview">
+                <br>
+                <input type="file" id="in_img" accept="image/*" onchange="loadPreview(this)">
+            </div>
+            <div class="petname">
+                내새끼 이름 <input type="text" id="petname" placeholder="이름">
+            </div>
+            <div>
+                <select id="type">
+                    <option value="norwegian forest">노르웨이 숲</option>
+                    <option value="ragdoll">렉돌</option>
+                    <option value="russian blue">러시안 블루</option>
+                    <option value="maine coon">메인쿤</option>
+                    <option value="munchkin">먼치킨</option>
+                    <option value="bengal">벵갈</option>
+                    <option value="british shorthair">브리티시 쇼트헤어</option>
+                    <option value="british longhair">브리티시 롱헤어</option>
+                    <option value="siamese">샴</option>
+                    <option value="scottish fold">스코티시 폴드</option>
+                    <option value="sphynx">스핑크스</option>
+                    <option value="american shorthair">아메리칸 쇼트헤어</option>
+                    <option value="abyssinian">아비시니안</option>
+                    <option value="custom">코리안 숏헤어</option>
+                    <option value="turkish angora">터키시 앙고라</option>
+                </select>
+            </div>
+            <div class="btn">
+                <button type="button" onclick="check()">내새끼 등록하기</button>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>

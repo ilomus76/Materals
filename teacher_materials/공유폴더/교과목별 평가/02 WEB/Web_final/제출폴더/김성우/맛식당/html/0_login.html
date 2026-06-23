@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맛식당!</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/0_login.css">
+
+    <script src="../js/0_login.js"></script>
+</head>
+<body>
+
+    <div id="wrap">
+        <!-- 좀 그럴싸한 음식 배경사진 하나 넣어두기 -->
+
+
+        <div class="logo">
+            <img src="../source/img/logo.png" alt="맛식당 로고 이미지">
+            <h2>여기 맛있당? 맛식당!</h2> 
+            <!-- 슬로건 뭘로 쓴담.. -->
+        </div>
+        
+        <form action="../php/0_login.php" method="post">
+            <div class="login">
+                <input type="text" id="user_id" name="user_id" placeholder="아이디/닉네임을 적어주세요">
+                <input type="password" id="user_pw" name="user_pw" placeholder="비밀번호">
+                <button type="submit">로그인</button>
+            </div>
+        </form>
+
+        <footer>
+            <img src="../source/img/join_icon.png" alt="계정 아이콘">
+            <a href="./0_2_join.html">회원가입</a>
+            <a href="../php/0_3_find_pw.php">비밀번호 찾기</a>
+        </footer>
+
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,215 @@
+/* =========================
+   MY PAGE
+========================= */
+
+main{
+    width:95%;
+    max-width:1200px;
+
+    margin:auto;
+
+    padding-top:20px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header h1:last-child{
+    margin-top:10px;
+    font-size:1.3rem;
+}
+
+/* =========================
+   SECTION COMMON
+========================= */
+
+section{
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    margin-bottom:20px;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.08);
+}
+
+section h2{
+    color:#6d28d9;
+
+    margin-bottom:20px;
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+#profileCard{
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+}
+
+#profileImage{
+    width:120px;
+    height:120px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:4px solid #7c3aed;
+
+    margin-bottom:15px;
+}
+
+#profileName{
+    font-size:1.4rem;
+    font-weight:700;
+
+    color:#222;
+
+    margin-bottom:10px;
+}
+
+#profileEmail{
+    color:#666;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+#statusSection p{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px 0;
+
+    border-bottom:1px solid #eee;
+}
+
+#statusSection p:last-child{
+    border-bottom:none;
+}
+
+#statusSection span{
+
+    display:inline-block;
+
+    width:60px;
+
+    text-align:center;
+
+    font-weight:700;
+
+    color:#7c3aed;
+}
+
+.label{
+    flex:1;
+}
+
+.value{
+    flex:1;
+
+    text-align:center;
+
+    font-weight:700;
+
+    color:#7c3aed;
+}
+
+/* =========================
+   BOARD COUNT
+========================= */
+
+#allBoardCount p{
+    font-size:1.1rem;
+}
+
+#myBoardCount{
+    color:#7c3aed;
+    font-weight:700;
+}
+
+/* =========================
+   SETTINGS
+========================= */
+
+#logoutBtn{
+    width:100%;
+
+    border:none;
+
+    background:#ef4444;
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+#logoutBtn:hover{
+    background:#dc2626;
+}
+
+/* =========================
+   FAVORITES
+========================= */
+
+#favoritesSection{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:15px;
+}
+
+#favoritesBoard,
+#favoritesGym{
+    min-height:120px;
+
+    background:#f8f5ff;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    border:1px solid #ede9fe;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    #favoritesSection{
+        grid-template-columns:1fr;
+    }
+
+    #profileImage{
+        width:100px;
+        height:100px;
+    }
+
+}

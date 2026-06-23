@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화리뷰게시판 - 상세보기</title>
+
+    <link rel="stylesheet" href="../../css/ReviewPage/review_view.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="../../html/HomePage/home_list.html">
+                    <img src="../../image/top_logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="client_menu" id="client_menu">
+                <a href="../../html/LogInPage/login.html">로그인</a>
+                <a href="../../html/JoinPage/join.html">회원가입</a>
+            </div>
+        </header>
+        <div class="second_header">
+            <div id="contents_menu">
+                <a href="../../html/IntroPage/movie_intro.html">영화소개</a>
+                <a href="./review_board.html">영화리뷰</a>
+                <a href="../MapPage/map.html">영화관 찾기</a> 
+            </div>
+            <div class="movie_search">
+                <input
+                    id="movie_keyword"
+                    class="searchbox"
+                    type="text"
+                    placeholder="영화제목 입력">
+                <button class="search_btn" onclick="searchMovie()">검색</button>
+            </div> 
+        </div>
+        
+        <div class="title">
+            <h2>리뷰게시판</h2>
+        </div>
+
+        <div class="view_wrap">
+            <div class="view_title_wrap">
+                <div class="col_label">제목</div>
+                <div class="col_input" id="review_title">제목이 들어갈 곳</div>
+            </div>
+            <div class="col1_wrap">
+                <div class="view_writer_wrap">
+                    <div class="col_label">작성자명</div>
+                    <div class="col_input" id="user_id">작성자명이 들어갈 곳</div>
+                </div>
+                <div class="view_date_wrap">
+                    <div class="col_label">작성일</div>
+                    <div class="col_input" id="review_date">작성일이 들어갈 곳</div>
+                </div>
+            </div>
+            <div class="col2_wrap">
+                <div class="view_movie_title_wrap">
+                    <div class="col_label">영화명</div>
+                    <div class="col_input" id="movie_title">영화명이 들어갈 곳</div>
+                </div>
+                <div class="view_hits_wrap">
+                    <div class="col_label">조회수</div>
+                    <div class="col_input" id="hits">조회수가 들어갈 곳</div>
+                </div>
+            </div>
+            <div class="view_content_wrap">
+                <div id="review_content"></div>
+            </div>
+
+            <div class="view_btn_wrap">
+                <div class="list_btn_wrap">
+                    <a href="./review_board.html">목록</a>
+                </div>
+                <div class="list_update_btn_wrap" id="update_btn_wrap">
+                    <button
+                        class="list_update_btn"
+                        onclick="location.href='./review_update.html?no='+new URLSearchParams(location.search).get('no')">
+                        수정
+                    </button>
+                </div>
+                <div class="list_delete_btn_wrap" id="delete_btn_wrap">
+                    <button class="list_delete_btn" onclick="deleteReview()">삭제</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/review_view.js"></script>
+    <script src="../../js/common.js"></script>
+</body>
+</html>

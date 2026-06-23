@@ -1,0 +1,460 @@
+@import url('./common.css');
+
+/* =============================
+    지도 페이지 제목
+============================= */
+
+.map_title {
+    text-align: center;
+    padding-top: 16px;
+}
+
+.map_title p {
+    display: inline-block;
+    padding: 8px 14px;
+    margin-bottom: 12px;
+    border-radius: var(--radius-lg);
+    background: var(--color-sub);
+    color: var(--color-main);
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+
+.map_title h1 {
+    font-family: var(--font-point);
+    font-size: 3rem;
+}
+
+.map_title span {
+    display: block;
+    margin-top: 8px;
+    color: var(--color-text-sub);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* =============================
+    검색 영역
+============================= */
+
+.map_search_section {
+    margin-top: 10px;
+    padding: 14px;
+    border-radius: var(--radius-lg);
+    background: #fff;
+    border: 1px solid var(--color-line);
+}
+
+/* 현재 위치 + 거리 영역 */
+.map_all {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+/* 현재 위치 버튼 */
+.current_location_btn {
+    width: 100%;
+    height: 42px;
+    border-radius: var(--radius-sm);
+    background: #fff;
+    color: var(--color-main);
+    border: 2px solid var(--color-sub);
+    font-size: 1.4rem;
+    font-weight: 900;
+}
+
+.current_location_btn:hover {
+    background: var(--color-sub);
+}
+
+/* 검색창 + 버튼 영역 */
+.map_search_box {
+    display: grid;
+    grid-template-columns: 1fr 56px 64px;
+    gap: 6px;
+}
+
+#mapSearchInput {
+    min-width: 0;
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-sm);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+#mapSearchInput:focus {
+    outline: none;
+    border-color: var(--color-main);
+}
+
+.map_search_btn,
+.map_reset_btn {
+    height: 42px;
+    border-radius: var(--radius-sm);
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+
+.map_search_btn {
+    background: var(--color-main);
+    color: #fff;
+}
+
+.map_reset_btn {
+    background: var(--color-sub);
+    color: var(--color-main);
+}
+
+/* =============================
+    거리 range
+============================= */
+
+.distance_box {
+    width: 100%;
+}
+
+.distance_range {
+    width: 100%;
+    height: 6px;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 999px;
+    background: var(--color-line);
+    cursor: pointer;
+}
+
+.distance_range::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--color-main);
+    border: 4px solid #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+}
+
+.distance_range::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--color-main);
+    border: 4px solid #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+}
+
+.distance_labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    color: #6b4226;
+    font-size: 1.1rem;
+    font-weight: 900;
+}
+
+/* =============================
+    필터
+============================= */
+
+.map_filter_section {
+    display: block;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 2px dashed var(--color-line);
+}
+
+.section_label {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.map_filter_list {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+}
+
+.map_filter_list {
+    cursor: grab;
+    user-select: none;
+}
+
+.map_filter_list.is-dragging {
+    cursor: grabbing;
+}
+
+.map_filter_list::-webkit-scrollbar {
+    display: none;
+}
+
+.map_filter_btn {
+    flex: 0 0 auto;
+    min-width: 64px;
+    height: 36px;
+    padding: 0 12px;
+    border: 1px solid #ffd39a;
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
+    color: #6b4226;
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+
+.map_filter_btn.selected {
+    background: var(--color-main);
+    border-color: var(--color-main);
+    color: #fff;
+}
+
+/* =============================
+    지도
+============================= */
+
+.map_area_section {
+    margin-top: 18px;
+}
+
+.map_box {
+    display: flex;
+    width: 100%;
+    height: 240px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-line);
+    background: var(--color-sub);
+    overflow: hidden;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.map_box P{
+    font-weight: 500;
+    color: #6b4226;
+}
+
+/* =============================
+    주변 맛집 리스트
+============================= */
+
+.place_section {
+    margin-top: 20px;
+}
+
+.section_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.page button:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.section_header h2 {
+    font-family: var(--font-point);
+    font-size: 2rem;
+}
+
+.page p {
+    color: var(--color-text-sub);
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.page strong {
+    color: var(--color-main);
+}
+
+.page{
+    display: flex;
+    align-items: center;
+}
+
+.place_section>.page{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.page button{
+    width: 20px;
+    display: flex;
+    padding: 2px 4px;
+    margin: 0 6px;
+    border-radius: 3px;
+    color: var(--color-main);
+    text-align: center;
+}
+
+.Information_note{
+    display: block;
+    color: var(--color-text-sub);
+    font-size: 1.3rem;
+    font-weight: 800;
+    text-align: center;
+}
+
+.place_list {
+    display: grid;
+    gap: 12px;
+}
+
+.empty_place_text{ 
+    border: 2px dashed var(--color-line);
+    border-radius: var(--radius-lg);
+    background-color: white;
+    text-align: center;
+    font-weight: 500;
+    color: #6b4226;
+    padding: 20px 0;
+}
+
+.place_card {
+    padding: 14px;
+    border-radius: var(--radius-lg);
+    background: #fff;
+    border: 1px solid var(--color-line);
+}
+
+.place_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.place_top h3 {
+    font-family: var(--font-point);
+    font-size: 1.8rem;
+}
+
+.place_top span {
+    flex: 0 0 auto;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
+    color: #6b4226;
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+
+.place_mid{
+    display: flex;
+    align-items: center;
+}
+
+.place_address {
+    margin-top: 8px;
+    color: var(--color-text-sub);
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.place_meta {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 4px 0 0 6px;
+    gap: 8px;
+    color: var(--color-main);
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+
+.location_btn {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.place_food_btn,
+.place_search_btn,
+.place_detail_btn {
+    height: 40px;
+    border-radius: var(--radius-sm);
+    background: #fff;
+    color: var(--color-main);
+    border: 2px solid var(--color-sub);
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+
+.place_food_btn:hover,
+.place_search_btn:hover,
+.place_detail_btn:hover {
+    background: var(--color-sub);
+}
+
+.related_food_box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--color-line);
+}
+
+.related_food_box span {
+    padding: 6px 10px;
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
+    color: #6b4226;
+
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+
+.related_food_box.is-hidden {
+    display: none;
+}
+
+.related_food_tag {
+    display: inline-flex;
+    align-items: center;
+    margin: 3px 4px 3px 0;
+    padding: 5px 8px;
+    border-radius: 999px;
+    background: var(--color-bg-sub);
+    color: var(--color-text);
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.redtable_menu_tag {
+    font-weight: 600;
+}
+
+/* =============================
+    PC
+============================= */
+
+@media (min-width: 768px) {
+    .map_all {
+        grid-template-columns: 180px 1fr;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .map_search_box {
+        grid-template-columns: 1fr 80px 80px;
+    }
+
+    .map_box {
+        height: 300px;
+    }
+
+    .place_list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
