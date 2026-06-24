@@ -1,0 +1,13 @@
+/* 요소 선택자로 스타일 적용 */
+h2{background-color: yellow; padding: 16px;}
+p{color: blue;}
+
+/* (권장)클래스 선택자 이용 */
+.wrap{
+    background-color: antiquewhite;
+    padding: 16px;
+}
+
+img{
+    width: 200px;
+}

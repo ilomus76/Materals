@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class keyword</title>
+
+    <script>
+        // 객체를 생성하는 새로운 방법 : class 키워드 등장
+
+        //1. 기존방식 [리터럴 객체 - 객체를 생성하면서 멤버를 설계하는 방식]
+        const p= {
+            //멤버변수 - property
+            name:'sam',
+            age:20,
+            //멤버함수 - method
+            show: function(){
+                document.write(this.name+":"+this.age+'<br>');
+            }
+        };
+        p.show();
+
+        //객체를 만들때 마다 멤버를 설계하는 것 짜증.
+        //그래서 먼저 멤버의 구조를 설계하고..필요할때 그 설계도로 객체를 생성하여 사용
+        //2. [기존방식] 생성자 함수
+        function Board(title, message, date){
+            //멤버변수
+            this.title= title;
+            this.message= message;
+            this.date= date;
+            
+            //멤버함수
+            this.show= function(){
+                document.write(this.title+'<br>');
+                document.write(this.message +'<br>');
+                document.write(this.date +'<br>');
+            }
+        }
+
+        //위 설계도 모습으로 객체를 생성
+        const b1= new Board('hello', 'nice to meet you', '2026-06-23');
+        const b2= new Board('second', 'have a good day', '2026-06-24');
+        b1.show();
+        b2.show();
+        document.write('<hr>');
+        // ----------------------------------------------------------
+
+        //3. 새로 등장한 설계도를 만드는 키워드 class 등장 (파이썬과 동일)
+        class Person{
+            //멤버변수 - 별도 키워드 없이
+            name='sam';
+            age= 20;
+
+            //객체를 생성하면서 값을 전달받고 싶다면..
+            //생성자 함수를 이 안에서 constructor()로 만들어야 함.
+            constructor(name, age, address){
+                this.name= name;
+                this.age= age;
+                //함수 영역안에서 멤버변수를 만들때는 this. 키워드 필요.
+                this.address= address; //이때 멤버변수가 추가로 만들어짐.
+            }
+
+            //멤버함수 - method (별도 function 키워드 없이 만들어야 함.)
+            show(){
+                //멤버변수 사용할때는 반드시 this.키워드와 함께..
+                document.write(this.name +" , " + this.age +" , " + this.address +'<br>');
+            }
+        }
+
+        //위 class 설계도면 모습으로 객체를 생성하고 사용
+        const p1= new Person('sam', 20, 'seoul'); //constructor()에 값 전달..
+        const p2= new Person('robin', 25, 'busan');
+        p1.show();
+        p2.show();
+
+        //특이점. JS는 유연한 언어 특징을 가지고 있어서..
+        //설계도에 없던 멤버를 객체 생성 후에 추가하여 사용할 수도 있음.
+        p1.tel= '010-1234-5678'; //새로운 멤버가 p1객체에 추가되었음.
+        //멤버함수도 추가할 수 있음.
+        p1.showTel= function(){
+            document.write(this.tel +'<br>');
+        }
+        p1.showTel();
+        //p2 객체에는 존재하지 않음.
+        //p2.showTel(); //error
+        document.write('<hr>');
+        // --------------------------------------------------
+
+        // 클래스의 상속 (기존 설계도면을 가져와서 조금 만 추가하여 새로운 설계도 만들기)
+        //1] 상속해줄 클래스(이름, 나이)
+        class Human{
+            constructor(name, age){
+                this.name= name; //멤버변수 생성
+                this.age= age;
+            }
+            show(){
+                document.write('name:' + this.name+"<br>"+'age: ' + this.age +'<br>');
+            }
+        }
+
+        //2] 상속받을 클래스 (이름, 나이, 전공) -- (이름,나이)를 관리하는 Human 클래스를 가져와서 (전공)을 추가한 클래스 설계
+        class Student extends Human{ //Humnan을 확장하여(상속하여)...
+            constructor(name, age, major){
+                //(이름,나이)는 상속해준 Human 클래스가 알아서 멤버로 넣어주고..
+                //상속해준 클래스를 부르는 용어 super
+                super(name, age); //Human 객체를 생성!
+                //(전공) 정보만 새로 멤버변수를 생성하여 값 저장                
+                this.major= major;
+            }
+
+            //멤버변수(이름,나이,전공)를 출력기능
+            show(){
+                //(이름,나이)는 상속해준 Human클래스에 출력기능이 존재함.
+                super.show();
+                //내 고유한 (전공) 멤버변수만 출력
+                document.write('major: '+ this.major +'<br>');
+            }
+        }
+
+        //객체 생성 및 멤버 사용
+        const s1= new Student('sam', 20,'ML');
+        const s2= new Student('robin', 25, 'DA');
+        s1.show();
+        s2.show();
+
+        document.write('<hr>');
+
+        // 클래스의 멤버중에서 객체를 생성하지 않고도 사용이 가능한 멤버를 만들기
+        // 정적static 멤버 (함수/변수)
+        class First{
+            //static 키워드가 붙은 멤버는 객체 없이도 사용가능(단, 클래스명.멤버명)
+            static show(){
+                document.write('first show function.....<br>');
+            }
+        }
+        //클래스는 설계도여서..객체를 만들어야만 멤버를 사용할 수 있음.
+        First.show();
+        //대표적으로..Math 의 기능함수들이 이 모습으로 사용
+        document.write( Math.floor(3.14) +'<br>' );
+        document.write('<hr>');
+        // ------------------------------------------------------
+
+        // [구조분해할당] ... 객체를 분해하여 필요한 멤버들만 별도의 변수/함수로 뽑아내기..
+        class Nice{
+            name='sam';
+            age= 20;
+            address= 'seoul';
+        }
+
+        const nice= new Nice();
+        document.write(nice.name +'<br>')
+        document.write(nice.age ='<br>');
+
+        //매번 nice라는 객체명을 쓰는 것 짜증!!!
+        //그래서 nice 객체의 멤버 중에 (이름, 나이)만 추출하기
+        let {name, age} = nice;
+        document.write(name+'<br>')
+        document.write(age +"<br>");
+
+        // 함수에 객체를 전달하여 멤버를 사용할때 많이 활용됨.
+        showNiceAge( nice ); //nice 객체를 전달받아 그 안에 있는 age 값만 출력하는 기능
+
+        function showNiceAge( {age,name} ){ //객체를 파라미터로 받기--구조 분해 할당
+            document.write(age +"<br>");
+        }
+
+        //참고로.. 멤버변수의 이름이 다르면 할당이 안됨.
+        let {addreeee} = nice; //할당 안됨.
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
