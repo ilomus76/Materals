@@ -1,0 +1,33 @@
+.item{
+    border: 1px solid gray;
+    padding: 16px;
+    margin: 4px;
+    border-radius: 4px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.line1{
+    width: 100%;
+    margin-bottom: 8px;
+}
+.line1 span{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.line1 span:nth-child(1){
+    margin-right: 2rem;
+}
+.line1 span:nth-child(2){
+    color: green;
+}
+
+.line2{
+    color: darkolivegreen;
+}
+
+.item:hover, .item:active{
+    background-color: lightgrey;
+    cursor: pointer;
+}
