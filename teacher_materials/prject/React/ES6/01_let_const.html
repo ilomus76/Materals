@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let const</title>
+
+    <script>
+        // ECMAScript 6버전(ES6 버전)에서 등장한 새로운 문법들.
+
+        //1. 변수 선언 키워드 추가 : let, const
+
+        //기존의 변수선언 키워드 var
+        var a= 10;
+        document.write(a +"<br>");
+
+        //같은 이름의 변수를 또 선언하면?
+        var a= 20; //var 키워드를 무시..즉. 기존 변수의 값 변경됨.
+        document.write(a +"<br>");
+        //실수로 같은 변수명을 써서 기존 값을 잃어버리는 문제가 발생될 수있으며..인식하기 어려움.
+
+        //새로운 키워드의 등장!
+        let b= 100;
+        document.write(b +'<br>');
+
+        //같은 이름의 변수를 만들면... 문법적으로 에러발생!!! -- 실행조차 안됨
+        //let b= 200; //error
+
+        //let도 변수키워드 이기에 값 변경은 가능함.
+        b= 200;
+        document.write(b+'<br>');
+
+        //경우에 따라서는 값변경을 하면 안되는 변수가 필요한 경우도 있음.
+        //그래서 등장한..키워드 -- 상수화된 변수
+        const PI= 3.14; //값 변경이 불가능한 변수
+        document.write('원주율:' + PI +'<br>');
+
+        //PI= 5.55; //예외발생.. 이 위치부터 코드가 멈춤.
+        //document.write('원주율:' + PI +'<br>');
+
+        //당연히 같은 이름의 변수선언은 에러!!
+        //const PI=5.55; //error
+
+        // 어떤 키워드를 사용할지 모르겠다면.. tip.
+        // 이름, 나이 같은 데이터 저장 변수는 let
+        // 객체를 참조하는 변수는 const를 권장.
+        // let name='sam'
+        // const in1= document.getElementById('in1')
+        // in1.value= name
+        //--------------------
+
+        // var과 다른 또 다른 특징! (인식되는 지역의 범위가 다름)
+        // var키워드 : 함수{}만 지역으로 인식함
+        // let,const 키워드 : 모든 {}를 지역으로 인식함.(대부분의 프로그래밍 언어 방식)
+        
+        function aaa(){
+            var name='sam'; //지역변수 ~ 함수안에서만 인식되는 변수
+            document.write('함수 안 : ' + name +'<br>')
+        }
+        aaa();//함수호출
+        //document.write('함수 밖 : ' + name +'<br>') //인식 안됨
+
+        //{}를 사용하는 다른 문법 - 조건문
+        if(true){
+            var age= 20; //지역변수?? -- 아님.. var은 함수{}만 지역임.
+            document.write('조건문 안 : ' + age +'<br>');
+        }
+        document.write('조건문 밖 : ' + age +'<br>');
+
+        //그래서..모든 {}를 지역으로 인식하는 변수 키워드 let, const [더 선호]
+        if(true){
+            let address='seoul'; //지역변수임!!
+            document.write(address+'<br>')
+        }
+        //document.write(address+'<br>') //error -- 인식안됨.
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
